@@ -17,8 +17,8 @@ var myWebpack = {
 	    loaders: [
 	        { test: /\.js$/, loaders:['babel','babel-loader','babel?presets=es2015'], exclude: /node_modules/ },
 	        { test: /\.vue$/, loader:"vue"},
-	        { test: /\.css$/, loader: ExtractTextPlugin.extract("style", 'css')},
-	        { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", 'css!sass')},
+	        { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
+	        { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass')},
 	        { test: /\.pug$/, loader: "pug"},
 
 	        
