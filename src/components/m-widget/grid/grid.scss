@@ -1,0 +1,272 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+
+	//公用属性
+	.main-list{
+		display: block;
+		overflow: hidden;
+		background-color: #fff;
+		position: relative;
+		.item{
+			width: 50%;
+			float: left;
+			padding: rem(10 10 20);
+			position: relative;
+		}
+		.link{
+			@include link;
+		}
+		.m-btn{
+			display: none;
+			// padding-top: 0.15rem;
+			// padding-bottom: 0.15rem;
+			// position: absolute;
+			// right: 0.2rem;
+			// bottom: 0;
+		}
+		.item-img{
+			width: 100%;
+			height: rem(354);
+			position: relative;
+			.ic-yuex{
+				color: nth($color,1);
+				padding: rem(4 10);
+				background-color: rgba(102,102,102, .8);
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.item-tit{
+			font-size: $fs28;
+			line-height: 1.3;
+			overflow:hidden;
+			empty-cells:show;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+		}
+		.item-txt{
+			// max-height: rem(84);
+			height: rem(84);
+			font-size: $fs30;
+			line-height: rem(44);
+			margin: rem(24 16);
+		}
+		.item-price{
+			font-size: $fs32;
+			margin: rem(0 15);
+		}
+		.item-pay{
+			float: left;
+			margin: rem(16 16 0);
+		}
+		.item-icn{
+			float: right;
+			padding-top: rem(10);
+		}
+		.item-stars{
+			padding: rem(4 0);
+		}
+		.item-num{
+			color: nth($color,4);
+			font-size: $fs22;
+			line-height: 1.2;
+			margin-top: rem(4);
+			span{
+				display: inline-block;
+				margin-right: rem(60);
+			}
+		}
+		.item-big{
+			width: 100%;
+			.item-txt{
+				min-height: auto;
+			}
+			.item-img{
+				height: rem(730);
+			}
+		}
+	}
+
+	//带有边框
+	.grid-list-bor{
+		&:before{
+			@include border(top,1px,#dbdbdb);
+		}
+		.item{
+			&:before{
+				@include border(right,1px,#dbdbdb);
+			}
+			&:after{
+				@include border(bottom,1px,#dbdbdb);
+			}
+			&:nth-of-type(2n)::before {
+				display: none;
+			}
+		}
+	}
+	
+	//单行列表
+	.single-list{
+		.item{
+			width: 100%;
+			overflow: hidden;
+			padding: .16rem 0 0 2.8rem;
+			&:before{
+				@include border(bottom,1px,#dbdbdb);
+				left: rem(270);
+			}
+		}
+		.item-txt{
+			margin: rem(0 24 0 0);
+		}
+		.item-img{
+			width: rem(250);
+			height: rem(250);
+			float: left;
+			margin-left: rem(-270);
+		}
+		.item-pay{
+			float: none;
+			margin-left: 0;
+		}
+		.item-icn{
+			float: none;
+		}
+		.item-price{
+			margin: rem(14 0 0);
+			position: absolute;
+			left: rem(270);
+			bottom: rem(32);
+			.del{
+				float: none;
+				margin-left: rem(12);
+			}
+		}
+	}
+
+	// 动态&话题
+	.dynamic-list{
+		.article{
+			padding: rem(20 30 34);
+			background-color: #fff;
+			position: relative;
+			&:after{
+				@include border(bottom,1px,#E4E4E4);
+			}
+			.link{
+				@include link;
+				top: 1rem;
+			}
+			.art-user{
+				overflow: hidden;
+				span{
+					float: left;
+					margin-right: rem(20);
+				}
+			}
+			.user-face,
+			.user-face img{
+				width: rem(80);
+				height: rem(80);
+			}
+			.user-name{
+				color: nth($color,4);
+				font-size: $fs28;
+				line-height: rem(80);
+			}
+			.art-tit,
+			.art-txt{
+				img{
+					width: rem(40);
+					margin-right: rem(10);
+				    margin-top: rem(-16);
+				}
+			}
+			.art-tit{
+				font-size: $fs36;
+				line-height: rem(50);
+				margin-top: rem(38);
+				word-wrap: break-word;
+				white-space: normal;
+				word-break: break-all;
+			}
+			.art-txt{
+				color: nth($color,4);
+				font-size: $fs26;
+				line-height: rem(40);
+				margin-top: rem(20);
+			}
+			.m-pics{
+				margin-top: rem(10);
+				.img{
+					padding: 0;
+					margin-right: rem(6);
+					&:nth-last-child(1){
+						margin-right: 0;
+					}
+					em{
+						color: nth($color,1);
+						position: absolute;
+					}
+					.iconn-79{
+						font-size: rem(37);
+						bottom: rem(17);
+						right: rem(20);
+					}
+					.iconn-80{
+						font-size: rem(47);
+						bottom: rem(15);
+						right: rem(15);
+					}
+				}
+			}
+			.art-info{
+				color: nth($color,3);
+				line-height: rem(28);
+				text-align: right;
+				margin-top: rem(30);
+				span{
+					padding-left: rem(22);
+					em{
+						margin-right: rem(8);
+						vertical-align: rem(-3);
+					}
+				}
+				.time{
+					float: left;
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	// 动态&话题 End
+
+	//搜索店铺结果
+	.shops-list{
+		.item{
+			width: 100%;
+			overflow: hidden;
+			padding: rem(30 20 30 150);
+			&:before{
+				@include border(top,1px,#dbdbdb);
+			}
+		}
+		.link{
+			@include link;
+		}
+		.item-img{
+			width: rem(100);
+			height: rem(100);
+			float: left;
+			margin-left: rem(-130);
+		}
+	}
+}

@@ -1,0 +1,14 @@
+//based on font-face() API
+//Arhtor: Mapk Jia Shilong
+
+@import "../css3/_translate.scss";
+
+// ## Define suspend
+// -----------------------------------------------------
+
+@mixin suspend(){
+	position:fixed;
+	left:50%;
+	top:50%;
+	@include translate((-50%,-50%));
+}

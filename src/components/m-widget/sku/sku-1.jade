@@ -1,0 +1,41 @@
+.m-skupop
+	.sku-main
+		a.sku-close
+			em.iconn-25
+		
+		.sku-info.flexbox
+			.img-box
+				img(src="https://i2.meixincdn.com/T1GzCTBvCT1RXrhCrK.jpg.200x200cTz.jpg")
+			.txt-box.flex1
+				div
+					h2 默默爱默默爱默默爱默默爱默默爱默默爱默默爱默默爱默默爱
+					p.price
+						strong.red ￥233.00
+						del.del ￥499.00
+		
+		.sku-attr
+			.attr-info
+				h4 颜色
+				ul.tags
+					-for(i=0;i<16;i++)
+						li 白色
+					li.active 白色
+					li(disabled="disabled") 白色
+			.attr-info
+				h4
+					| 数量
+					small （库存999999件）
+				.attr-num
+					a.minus(disabled="disabled") -
+					p.ipt-box
+						input.ipt(type="tel",disabled="disabled",value="1")
+					a.plus(disabled="disabled") +
+					span.red.num-tips 团购每人限购1件
+
+		.sku-btn.flexbox
+			a.btn-black.flex1(disabled="disabled") 加入购物车
+			a.btn-red.flex1(disabled="disabled") 立即购买
+
+		.sku-btn.flexbox
+			a.btn-ok.flex1(disabled="disabled") 确定
+///sku

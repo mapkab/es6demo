@@ -1,0 +1,359 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	// menu-list
+	.menu-fixed{
+		position: fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    z-index: 99;
+	}
+	.menu-list{
+		// overflow: hidden;
+		text-align: center;
+		background: #fff;
+		position: relative;
+		@include flex-box();
+		&:after{
+			// @include border(bottom,1px,#DDD);
+			height: 0;
+			content: "";
+			display: block;
+			overflow: hidden;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-bottom: 1px solid #ddd;
+		}
+		.item{
+			height: rem(90);
+			// padding: rem(30 0);
+			position: relative;
+			@include flex-col(1);
+			span{
+				position: relative;
+				left: rem(15);
+				&:before,
+				&:after{
+					@include after;
+					border-style: solid;
+					border-color: #666 transparent;
+				}
+				&:before{
+					top:rem(10);
+					border-width:rem(0 8 8);
+				}
+				&:after{
+					top:.21rem;
+					border-width: rem(8 8 0);
+				}
+				&.up:before{
+					border-color: #fa5c5c transparent;
+				}
+				&.down:after{
+					border-color: #fa5c5c transparent;
+				}
+			}
+		}
+		.link{
+			height: rem(90);
+			color: nth($color,3);
+			font-size: $fs28;
+			display: inline-block;
+			padding: rem(30 20);
+			vertical-align: top;
+			p{
+				line-height: inherit;
+			}
+		}
+		// A
+		// .txt{
+		// 	color: nth($color,3);
+		// 	font-size: $fs28;
+		// }
+		// 文字样式
+
+		.iconn-26,
+		.iconn-36,
+		.iconn-44,
+		.iconn-50{
+			width: rem(54);
+			height: rem(54);
+			font-size: rem(50);
+			margin-bottom: rem(18);
+			// 店铺
+		}
+		//icon
+
+		.num{
+			width: rem(34);
+			height: rem(34);
+			color: nth($color,1);
+			font-size: $fs22;
+			display: none;
+			background-color: #FF5C5C;
+			@include prefix(border-radius,rem(34),webkit);
+			position: absolute;
+			right: rem(0);
+			top: rem(0);
+		}
+		// 提示信息
+
+		.active{
+			color: nth($color,6);
+			position: relative;
+			em{
+				color: nth($color,6);
+			}
+			a.link{
+				color: nth($color,6);
+				position: relative;
+				z-index: 1;
+				&:after{
+					// @include border(bottom,1px,#FF5C5C);
+					height: 1px;
+					content: "";
+					display: block;
+					overflow: hidden;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 100%;
+					margin-top: -1px;
+					background-color: #333;
+				}
+			}
+		}
+		// 选中
+	}
+	// 公用
+
+	.menu-list-shoptop{
+		.link{
+			height: rem(160);
+		}
+	}
+
+	.menu-list-foot{
+		&:after{
+			display: none;
+		}
+		.link{
+			color: nth($color,5);
+		}
+		.item + .item{
+			&:after{
+				@include border(left,1px,#DDD);
+				top: rem(26);
+				bottom: rem(26);
+			}
+		}
+		.active{
+			a.link:after{
+				display: none;
+			}
+		}
+	}
+	// 用户中心-页底
+
+	.menu-list-order{
+		.link{
+			padding-top: rem(40);
+			padding-bottom: rem(40);
+		}
+	}
+	// 用户中心
+
+	.menu-list-shopbtn{
+		font-size: $fs32;
+		// border-top: 1px solid #ddd;
+		// position: fixed;
+		// left: 0;
+		// right: 0;
+		// bottom: 0;
+		// z-index: 40000;
+		@include fixed-all;
+		top: auto;
+		&:after{
+			@include border(top,1px,#DDD);
+		}
+		.item{
+			a{
+				width: 100%;
+				display: inline-block;
+				padding: rem(30 0);
+			}
+			.txt{
+				margin-left: rem(10);
+			}
+		}
+		.item + .item{
+			&:after{
+				@include border(left,1px,#DDD);
+				top: rem(28);
+				bottom: rem(30);
+			}
+		}
+		.active .link{
+			&:after{
+				display: none;
+			}
+		}
+	}
+
+	.menu-list-shopmin{
+		font-size: $fs24;
+	}
+
+	.del-menu{
+		height: rem(88);
+		line-height: rem(88);
+		overflow: hidden;
+		padding: rem(0 20 0 30);
+		// border-top: 1px solid #ddd;
+		background-color: #fff;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 40000;
+		&:after{
+			@include border(top,1px,#ddd);
+		}
+		.check-all-btn{
+			float: left;
+			em{
+				font-size: $fs30;
+				margin-right: rem(20);
+			}
+			.iconn-38{
+				color: #999;
+			}
+			.iconn-39{
+				color: #FF5C5C;
+			}
+		}
+		.m-btn{
+			float: right;
+			line-height: normal;
+			margin-top: rem(9);
+		}
+	}
+
+	.m-navmore {
+		display: none; // 隐藏误删，maty
+	    height: 0;
+	    overflow: hidden;
+	    -webkit-transition: all .1s;
+	    transition: all .1s;
+	    background-color: #fff;
+	    box-shadow: 0 -1px 0 #e4e4e4 inset;
+	    ul {
+		    height: rem(110);
+		    display: block;
+		    @include flex-box();
+		}
+		li {
+		    text-align: center;
+		    @include flex-col(1);
+		    em {
+			    color: #666;
+			    font-size: rem(41);
+			}
+		}
+		a {
+		    display: block;
+		    padding-top: rem(18);
+		}
+		p {
+		    color: #333;
+		    font-size: $fs24;
+		    line-height: rem(34);
+		    margin-top: rem(8);
+		}
+	}
+
+	.menu-list-btns{
+		.tab-nav{
+			width: rem(302);
+			position: absolute;
+			bottom: rem(113);
+			left: rem(-10);
+			border: 1px solid #D7D6D6;
+			@include prefix(border-radius,rem(10),webkit);
+			background: #fff;
+			-webkit-box-shadow: 0 0 .06rem #D7D6D6;
+			box-shadow: 0 0 .06rem #D7D6D6;
+			.triangle{
+				display: block;
+				width: rem(26);
+				height: rem(14);
+				overflow: hidden;
+				position: absolute;
+				left: rem(56);
+				bottom: rem(-13);
+				z-index: 10;
+				&:after{
+					z-index: 9;
+					width: rem(26);
+					height: rem(26);
+					content: "";
+					overflow: hidden;
+					display: block;
+					margin-top: rem(-18);
+					background-color: #fff;
+					-webkit-box-shadow: 0 0 .1rem #D7D6D6;
+					box-shadow: 0 0 .1rem #D7D6D6;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+			ul{
+				width: rem(302);
+				overflow: hidden;
+				margin-bottom: -1px;
+				@include prefix(border-radius,rem(10),webkit)
+			}
+			li{
+				float: left;
+				width: rem(302);
+				color: #666;
+				font-size: $fs28;
+				text-align: center;
+				padding: 0;
+				border-bottom: 1px solid #D8D8D8;
+				a{
+					max-height: rem(60);
+					padding: rem(16 26);
+				    line-height: rem(28);
+				    @include ellipsis();
+				}
+			}
+		}
+		.nav-big{
+			width: rem(605);
+			left: rem(-168);
+			ul{
+				width: rem(605);
+			}
+			.triangle{
+				left: rem(212);
+			}
+			&:after{
+				content: "";
+				width: 1px;
+				display: block;
+				background-color: #D8D8D8;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+			}
+		}
+	}
+
+}

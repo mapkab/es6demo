@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	//APP下载
+	.m-downapp{
+		height: rem(100);
+		background-color: #F4CC56;
+		position: relative;
+		z-index: 1000;
+		.app-box{
+			padding: rem(13 50 12 55);
+			background-color: #F4CC56;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 1000;
+		}
+		.app-close{
+			padding: rem(14);
+			position: absolute;
+			left: 0;
+			top: 0;
+			em{
+				width: rem(22);
+				height: rem(22);
+				color: nth($color,1);
+				font-size: $fs20;
+			}
+		}
+		.app-btn{
+			color: #F4CC56;
+			float: right;
+			font-size: $fs28;
+			line-height: inherit;
+			padding: rem(12 29 10 29);
+			margin-top: rem(12);
+			background-color: #fff;
+			@include prefix(border-radius,rem(5),webkit);
+		}
+		.app-logo{
+			width: rem(75);
+			height: rem(75);
+			float: left;
+			@include prefix(border-radius,rem(15),webkit);
+		}
+		.app-tit{
+			color: nth($color,1);
+			font-size: $fs28;
+			line-height: rem(36);
+			position: absolute;
+			left: rem(145);
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+	}
+}

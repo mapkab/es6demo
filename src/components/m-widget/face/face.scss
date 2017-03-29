@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	//用户
+	[class^="m-user"],
+	[class*="m-user"]{
+		overflow: hidden;
+		@include flex-box();
+		.face{
+			overflow: hidden;
+			@include prefix(border-radius,50%,webkit);
+			img{
+				width: 100%;
+			}
+		}
+		.name{
+			@include flex-col(1);
+		}
+	}
+	// public
+
+	
+
+	.m-user80{
+		.face{
+			width: rem(80);
+		}
+		.name{
+			font-size: $fs28;
+			padding-top: rem(20);
+			padding-left: rem(20);
+		}
+	}
+	// 80
+}

@@ -1,0 +1,6 @@
+//based on rm-unit() API
+//Arhtor: Mapk Jia Shilong
+
+@function rm-unit($num){
+    @return $num / ($num * 0 + 1);
+}

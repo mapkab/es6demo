@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+
+
+//========== _configure.scss ==========//
+@import "../../sasscore/_configure.scss";
+
+
+//========== public-wap.scss ==========//
+// reset
+@import "../reset/reset.scss";		//全局
+
+/*button*/
+@import "../button/button.scss";		//全局  ？？
+
+/*coupon*/
+@import "../coupon/coupon.scss";		//非全局  ？？
+
+/*dialog*/
+@import "../dialog/dialog.scss";		//全局 
+
+/*footer*/
+@import "../footer/footer.scss";		//全局  ？？
+
+// /*grid*/
+@import "../grid/grid.scss";			//全局  ？？？ 老版本样式替换
+
+/*header*/
+@import "../header/header.scss";		//全局
+
+/*hint*/
+@import "../hint/hint.scss";			//全局
+
+/*icon*/
+@import "../icon/icon.scss";			//全局
+
+// /*menu*/
+@import "../menu/menu-test.scss";			//全局  ？？ 老版本样式替换
+
+/*pic*/
+@import "../pic/pic.scss";			//全局	？？？ 待确认
+
+/*prompt*/
+@import "../prompt/prompt.scss";		//全局
+
+/*shaer*/
+@import "../share/share.scss";		//全局  ？？？ 待确认
+
+/*toast*/
+@import "../toast/toast.scss";		//全局
+
+/*face*/
+@import "../face/face.scss";			//头像 
+
+
+
+// 老版本问题-maty
+// /*menu*/
+// @import "/menu/menu-maty.scss";
+
+// /*grid*/
+// @import "/grid/grid-maty.scss";
+
+
+
+
+
+
+
+.index-btn{
+	color: #fff;
+	font-size: .32rem;
+	padding: .2rem 0;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #FF5C5C;
+}
+.index-p{
+	padding: .2rem;
+}
+
+
+
+
+.index-menu-list{
+	text-align: center;
+	background: #fff;
+	position: relative;
+	@include flex-box();
+	&:after{
+		// @include border(bottom,1px,#DDD);
+		height: 0;
+		content: "";
+		display: block;
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-bottom: 1px solid #ddd;
+	}
+	.item{
+		// height: rem(90);
+		// padding: rem(30 0);
+		position: relative;
+		@include flex-col(1);
+	}
+	.link{
+		// height: rem(90);
+		color: nth($color,3);
+		font-size: $fs28;
+		display: inline-block;
+		padding: 15px 10px;
+		p{
+			// height: 0;
+			line-height: inherit;
+		}
+	}
+	.active{
+		color: nth($color,6);
+		position: relative;
+		em{
+			color: nth($color,6);
+		}
+		a.link{
+			color: nth($color,6);
+			position: relative;
+			z-index: 1;
+			&:after{
+				// @include border(bottom,1px,#FF5C5C);
+				height: 0;
+				content: "";
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border-top: 1px solid #FF5C5C;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//========== SASSCORE 调用方法 ==========//
+// 单位换算（rem）
+	// width:	rem(100);
+	// margin:	rem(100 200 300 400);
+	//----------
+// 单行&多行截字
+	// @include ellipsis(); 默认截字一行
+	// @include ellipsis(mobile,3); 截字多行
+	// @include ellipsis(){width:2rem;}; 带有宽度截字
+ 
+// 圆角
+	//@include prefix(border-radius,50%,webkit moz ms);
+ 
+// box-sizing: border-box;
+	// box-sizing(border,webkit moz ms o);
+ 
+// flex布局
+	// @include flex(center,center); 非常用属性
+	// @include flex-box(); 常用属性
+	// @include flex-col(1); 常用属性
+//==========使用方法 End==========//
+
+//========== 常用属性 m-widget/reset/_mixin.scss ==========//
+// 屏幕局中
+	// .demo-A{
+	//		@include center;
+	// }
+
+// 伪类 after
+	// .demo-A{
+	// 		@include after;
+	// }
+
+// 全屏定位
+	// .demo-A{
+	// 		@include fixed-all;
+	// }
+
+// A 点击区域
+	// .demo-A{
+	// 		@include link;
+	// }
+
+//0.5像素边框
+	// .demo-A{
+	//		&:after{
+	//			@include border(all,1px,#f00);
+	//			值：all left right top bottom
+	//		}
+	//	}
+//==========常用属性 End==========//
+
+//========== 颜色、字体 m-widget/reset/_base.scss ==========//
+//示例：
+	// $color: 	#FFF	#DDD	#999	#666	#333	#FF5C5C;
+	// $fs20 - $fs50 只有偶数
+	// sass：
+		// .demo-A{
+		//		color: nth($color, 2);
+		//		font-size: $fs24;
+		//	}
+		// .demo-B{
+		//		color: nth($color, 3);
+		//		font-size: $fs26;
+		//	}
+	// css
+		// .demo-A{
+		//		color:#DDD;
+		//		font-size: .24rem;
+		//	}
+		// .demo-B{
+		//		color:#999;
+		//		font-size: .26rem;
+		//	}
+//==========颜色、字体 End==========//
+
+//========== 组件熟知 ==========//
+//---------- 全站公用
+// 	点击			active
+// 	按钮置灰
+// 	文字置灰		disabled="disabled"
+
+
+//---------- 页头
+// 	公用类			header
+// 	定位类			header-fixed
+// 	无背景颜色		header-private
+// 	具体使用参考组件
+
+
+//---------- TAB
+// 	公用类			menu-list
+// 	吸顶类			menu-fixed
+// 	具体使用参考组件
+
+
+//---------- 图片列表
+// 	公用类			main-list
+// 	边框九格		grid-list-bor
+// 	LI大图类		item item-big
+// 	单行列表		single-list
+// 	具体使用参考组件
+
+
+//---------- 按钮
+// 	公用类			m-btn
+// 	公用大按钮		m-btn m-btn-big
+// 	宽度固定		m-btn m-btn-black（购物车使用）
+// 	具体使用参考组件
+
+
+//---------- 图占位
+// 	公用类			m-pics
+// 	具体使用参考组件
+
+
+//---------- 优惠券
+// 	公用类			m-coupons
+// 	店铺类			m-coupons m-coupons-shop
+// 	具体使用参考组件
+
+
+//---------- 提示信息
+// 	无商品			page-no
+// 	加载商品		page-more
+// 	页码			page-num
+// 	具体使用参考组件
+
+
+//---------- 缺省页
+// 	公用类			m-prompt（margin-top值在当前页面css中定义，组件不是固定值）
+// 	具体使用参考组件
+
+
+//---------- toast
+// 	公用类			m-toast（JS已提取组件）
+// 	具体使用参考组件
+
+
+//---------- dialog
+// 	公用类			m-dialog（JS已提取组件）
+// 	具体使用参考组件
+
+
+//---------- 分享
+// 	页头分享		m-share-top（JS已提取组件）
+// 	页底分享		m-share-bottom（JS已提取组件）
+// 	具体使用参考组件
+
+
+//---------- 版权
+// 	类名			icp-txt
+
+
+//---------- 图标（iconfont）
+// 	公用类			iconn-0/n+1
+// 	header区域只能用“icon-顶部导航”等字样的icon
+// 	已选状态有两种展现形式
+// 		① 调用两个不同的类（例：.iconn-26 / .iconn-27）
+// 		② 父级添加'active'实现
+
+// 	金牌			ic-jin
+// 	银牌			ic-yin
+// 	铜牌			ic-tong
+// 	返				ic-fan
+// 	精品			ic-jingp
+// 	专访			ic-zhuanf
+//==========组件 End==========//

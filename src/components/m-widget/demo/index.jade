@@ -1,0 +1,34 @@
+doctype html
+html(lang="zh-CN" data-use-rem="750")
+	include ../head/head.jade
+	link(type="text/css",rel="stylesheet",href="../../css/demo/index.css")
+	
+	body.opg.store-order
+		include ../head/rem.jade
+
+		a.index-btn(href="index.html") 点我刷新
+		//- include article/article-1.jade
+
+		//- include button/button-1.jade
+		//- include button/button-2.jade
+		//- include button/button-3.jade
+		//- include button/button-4.jade
+
+		include ../menu/menu-1.jade
+		p.index-p 你看红框和灰色重合了么
+
+		ul.index-menu-list
+			li.item.active
+				a.link(href="javascript:;")
+					p.txt 菜单一
+			li.item
+				a.link(href="javascript:;")
+					p.txt 菜单二
+			li.item
+				a.link(href="javascript:;")
+					p.txt 菜单三
+			li.item
+				a.link(href="javascript:;")
+					p.txt 菜单四
+		p.index-p 我是PX写的，我重合了
+

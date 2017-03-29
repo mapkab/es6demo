@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+// disabled="disabled" 禁用按钮样式
+.opg{
+	%go{
+		width: rem(70);
+		height: rem(70);
+		background: url(../../images/common/go-bg.png) no-repeat -99rem -99rem;
+		background-size: rem(230 70);
+		position: fixed;
+		right: rem(40);
+		bottom: rem(138);
+		z-index: 99;
+	}
+	.go-top{
+		@extend %go;
+		background-position: 0 0;
+	}
+	.go-home{
+		@extend %go;
+		margin-bottom: rem(-108);
+		background-position: rem(-80 0);
+	}
+
+	// button
+	.m-btn,
+	.m-btn-ms,
+	.m-btn-big,
+	.m-btn-bor,
+	.m-btn-black,{
+		position: relative;
+		padding-left: .3rem;
+		padding-right: .3rem;
+		display: inline-block;
+		color: nth($color,1);
+		// line-height: inherit;
+		line-height: 1;
+		text-align: center;
+		vertical-align: top;
+		background-color: #FF5C5C;
+		@include prefix(border-radius, rem(110), webkit);
+		&:after{
+			@include border(all,1px,#FF5C5C);
+			@include prefix(border-radius, rem(110), webkit);
+		}
+	}
+	.m-btn,
+	.m-btn-bor,
+	.m-btn-black{
+		padding-top: .2rem;
+		padding-bottom: .2rem;
+		min-width: rem(181);
+		font-size: $fs26;
+	}
+	// 常规按钮
+	.m-btn{
+		// min-width: rem(181);
+		// color: nth($color,1);
+		// font-size: $fs26;
+		// line-height: inherit;
+		// text-align: center;
+		// padding: rem(20 30);
+		// padding-top: .2rem;
+		// padding-bottom: .2rem;
+		// display: inline-block;
+		// overflow: hidden;
+		// vertical-align: top;
+		// background-color: #FF5C5C;
+		// @include prefix(border-radius, rem(110), webkit);
+		// position: relative;
+
+		// 按钮禁用样式
+		&[disabled="true"]{
+			background-color: #D8D8D8;
+			&:after{
+				border-color: #D8D8D8;
+			}
+		}
+		
+		&.btn-red{
+			background-color: #FF5C5C;
+		}
+		
+	}
+
+	// 边框按钮
+	.m-btn-bor{
+		color: #FF5C5C;
+		background-color: #fff;
+		&[disabled="true"]{
+			color: #ccc;
+			&:after{
+				border-color: #DDD;
+			}
+		}
+	}
+
+	// 黑色按钮-加入购物车
+	.m-btn-black{
+		padding-left: 0;
+		padding-right: 0;
+		max-width: rem(181);
+		border-color: #333;
+		background-color: #333;
+		&:after{
+			border-color: #333;
+		}
+		&[disabled="true"]{
+			background-color: #D8D8D8;
+			&:after{
+				border-color: #D8D8D8;
+			}
+		}
+	}
+
+	// 较小按钮
+	.m-btn-ms{
+		padding: rem(15 20 15 20);
+		font-size: $fs24;
+
+		// 禁用样式
+		&[disabled="true"]{
+			// border-color: #FF9F9F;
+			background-color: #FF9F9F;
+			&:after{
+				border-color: #FF9F9F;
+			}
+		}
+		
+		// 点击/选中样式
+		&.active{
+			// border-color: #D14648;
+			background-color: #D14648;
+			&:after{
+				border-color: #D14648;
+			}
+		}
+	}
+
+	// 较大按钮
+	.m-btn-big{
+		// min-width: rem(590);
+		// max-width: rem(590);
+		// min-height: rem(88);
+		
+		padding-top: rem(25);
+		padding-bottom: rem(25);
+		display: block;
+		font-size: $fs32;
+
+		// 禁用样式
+		&[disabled="true"]{
+			// border-color: #FF9F9F;
+			background-color: #FF9F9F;
+			&:after{
+				border-color: #FF9F9F;
+			}
+		}
+		
+		// 点击/选中样式
+		&.active{
+			// border-color: #D14648;
+			background-color: #D14648;
+			&:after{
+				border-color: #D14648;
+			}
+		}
+	}
+ }

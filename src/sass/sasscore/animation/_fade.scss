@@ -1,0 +1,177 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## fade-in
+// == @include fade-in() or @include fade-in(webkit moz)
+// ------------------------------------------------------
+
+// ## fade-in
+@mixin fade-in($prefixs:webkit){
+	@include keyframes(fade-in,$prefixs){
+		0% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	}
+	.fade-in {
+		@include animation((fade-in 1s 0.1s),$prefixs);
+	}
+}
+
+// ## fade-in-up
+@mixin fade-in-up($prefixs:webkit){
+	@include keyframes(fade-in-up,$prefixs){
+		0% {
+			opacity:0;
+			@include translate((30px,y),$prefixs);
+		}
+		100% {
+			opacity:1;
+			@include translate((0,y),$prefixs);
+		}
+	}
+	.fade-in-up {
+		@include animation((fade-in-up 1s 0.1s),$prefixs);
+	}
+}
+
+// ## fade-in-down
+@mixin fade-in-down($prefixs:webkit){
+	@include keyframes(fade-in-down,$prefixs){
+		0% {
+			opacity:0;
+			@include translate((-30px,y),$prefixs);
+		}
+		100% {
+			opacity:1;
+			@include translate((0,y),$prefixs);
+		}
+	}
+	.fade-in-down {
+		@include animation((fade-in-down 1s 0.1s),$prefixs);
+	}
+}
+
+// ## fade-in-left
+@mixin fade-in-left($prefixs:webkit){
+	@include keyframes(fade-in-left,$prefixs){
+		0% {
+			opacity:0;
+			@include translate((30px,x),$prefixs);
+		}
+		100% {
+			opacity:1;
+			@include translate((0,x),$prefixs);
+		}
+	}
+	.fade-in-left {
+		@include animation((fade-in-left 1s 0.1s),$prefixs);
+	}
+}
+
+// ## fade-in-right
+@mixin fade-in-right($prefixs:webkit){
+	@include keyframes(fade-in-right,$prefixs){
+		0% {
+			opacity:0;
+			@include translate((-30px,x),$prefixs);
+		}
+		100% {
+			opacity:1;
+			@include translate((0,x),$prefixs);
+		}
+	}
+	.fade-in-right {
+		@include animation((fade-in-right 1s 0.1s),$prefixs);
+	}
+}
+
+// ## fade-out
+// ------------------------------------------------------
+
+// ## fade-out
+@mixin fade-out($prefixs:webkit){
+	@include keyframes(fade-out,$prefixs){
+		0% {
+			opacity:1;
+		}
+		100% {
+			opacity:0;
+		}
+	}
+	.fade-out {
+		@include animation((fade-out 1s 0.1s both),$prefixs);
+	}
+}
+
+// ## fade-out-up
+@mixin fade-out-up($prefixs:webkit){
+	@include keyframes(fade-out-up,$prefixs){
+		0% {
+			opacity:1;
+			@include translate((0,y),$prefixs);
+		}
+		100% {
+			opacity:0;
+			@include translate((-30px,y),$prefixs);
+		}
+	}
+	.fade-out-up {
+		@include animation((fade-out-up 1s 0.1s both),$prefixs);
+	}
+}
+
+// ## fade-out-down
+@mixin fade-out-down($prefixs:webkit){
+	@include keyframes(fade-out-down,$prefixs){
+		0% {
+			opacity:1;
+			@include translate((-30px,y),$prefixs);
+		}
+		100% {
+			opacity:0;
+			@include translate((0,y),$prefixs);
+		}
+	}
+	.fade-out-down {
+		@include animation((fade-out-down 1s 0.1s both),$prefixs);
+	}
+}
+
+// ## fade-out-left
+@mixin fade-out-left($prefixs:webkit){
+	@include keyframes(fade-out-left,$prefixs){
+		0% {
+			opacity:1;
+			@include translate((0,x),$prefixs);
+		}
+		100% {
+			opacity:0;
+			@include translate((-30px,x),$prefixs);
+		}
+	}
+	.fade-out-left {
+		@include animation((fade-out-left 1s 0.1s both),$prefixs);
+	}
+}
+
+// ## fade-out-right
+@mixin fade-out-right($prefixs:webkit){
+	@include keyframes(fade-out-right,$prefixs){
+		0% {
+			opacity:1;
+			@include translate((0,x),$prefixs);
+		}
+		100% {
+			opacity:0;
+			@include translate((30px,x),$prefixs);
+		}
+	}
+	.fade-out-right {
+		@include animation((fade-out-right 1s 0.1s both),$prefixs);
+	}
+}

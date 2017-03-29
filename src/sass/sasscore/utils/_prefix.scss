@@ -1,0 +1,43 @@
+//based on prefix() API
+//Arhtor: Mapk Jia Shilong
+
+@mixin prefix($key,$val,$prefixes:webkit){
+  @each $prefix in $prefixes {
+      @if $prefix == webkit {
+        -webkit-#{$key}:$val;
+      }
+      @else if $prefix == moz{
+        -moz-#{$key}:$val;
+      }
+      @else if $prefix == ms{
+        -ms-#{$key}:$val;
+      }
+      @else if $prefix == o{
+        -o-#{$key}:$val;
+      }
+      @else if $prefix == none{
+        
+      }
+    }
+    #{$key}:$val;
+}
+@mixin prefix-value($key,$val,$prefixes:webkit){
+  @each $prefix in $prefixes {
+      @if $prefix == webkit {
+        #{$key}:-webkit-#{$val};
+      }
+      @else if $prefix == moz{
+        #{$key}:-moz-#{$val};
+      }
+      @else if $prefix == ms{
+        #{$key}:-ms-#{$val};
+      }
+      @else if $prefix == o{
+        #{$key}:-o-#{$val}
+      }
+      @else if $prefix == none{
+        
+      }
+    }
+    #{$key}:$val;
+}

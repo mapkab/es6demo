@@ -1,0 +1,157 @@
+h2 九格-列表结构
+ul.main-list
+	-for(i=0;i<4;i++) //循环四个同样的LI
+		li.item
+			a(href="javascript:;")
+				.item-img
+					img(src='https://i-pre.meixincdn.com/T15yWTBKxT1RXrhCrK.200x200cTz.jpg')
+				.item-txt 情人生日礼Crystallin精装礼品
+				.item-price
+					span.red ¥2199.40
+					del.del ¥2899.00
+
+
+h2 九格-带有边框列表
+ul.main-list.grid-list-bor
+	-for(i=0;i<4;i++) //循环四个同样的LI
+		li.item
+			a(href="javascript:;")
+				.item-img
+					img(src='https://i-pre.meixincdn.com/T15yWTBKxT1RXrhCrK.200x200cTz.jpg')
+				.item-txt 情人生日礼Crystallin精装礼品
+				.item-price
+					span.red ¥2199.40
+					del.del ¥2899.00
+	// 大图
+	li.item.item-big
+		a(href="javascript:;")
+			.item-img
+				img(src='https://i-pre.meixincdn.com/T15yWTBKxT1RXrhCrK.200x200cTz.jpg')
+			.item-txt 情人生日礼Crystallin精装礼品
+			.item-price
+				span.red ¥2199.40
+				del.del ¥2899.00
+	// /大图
+
+
+h2 单行-列表
+ul.main-list.single-list
+	-for(i=0;i<4;i++) //循环四个同样的LI
+		li.item
+			a(href="javascript:;")
+				.item-img
+					img(src='https://i-pre.meixincdn.com/T15yWTBKxT1RXrhCrK.200x200cTz.jpg')
+				.item-txt 创意铅笔袋韩国文具盒简约男女生小清新日韩版中学生学习用品
+				.item-price
+					span.red ¥2199.40
+					del.del ¥2899.00
+				.item-pay 131付款
+
+h2 单行-列表
+ul.main-list
+	-for(i=0;i<4;i++) //循环四个同样的LI
+		li.item
+			a(href="javascript:;")
+				.item-img
+					span.ic-yuex 月销7
+					img(src='https://i-pre.meixincdn.com/T15yWTBKxT1RXrhCrK.200x200cTz.jpg')
+				.item-txt
+					em.ic-fan
+					创意铅笔袋韩国文具盒简约男女生小清新日韩版中学生学习用品
+				.item-price
+					span.red ¥2199.40
+					del.del ¥2899.00
+				.item-pay 131付款
+
+h2 单行-列表
+section.dynamic-list
+	article.article
+		a.art-link(href="##")
+		.art-user
+			span.user-face
+				img(src="https://js-pre.meixincdn.com/m/h5/dist/images/gome_icon.png")
+			span.user-name 用户名称A
+		h2.art-tit 老店铺新装修！
+		.art-txt
+			p 本店始创于康熙年间，经过先后6000多年，研制出这款显示器，绝对高清，绝对靠谱！
+		.m-pics
+			div
+				img(src='../src/images/w750x250.jpg')
+		.art-info
+			span.time 3分钟前
+			
+			span
+				em.iconn-19
+				| 23
+			span
+				em.iconn-28
+				| 34
+			span
+				em.iconn-22
+				| 12
+	// 单独一块
+
+	article.article
+		a.art-link(href="##")
+		.art-user
+			span.user-face
+				img(src="https://js-pre.meixincdn.com/m/h5/dist/images/gome_icon.png")
+			span.user-name 用户名称A
+		h2.art-tit 老店铺新装修！
+		.art-txt
+			p 本店始创于康熙年间，经过先后6000多年，研制出这款显示器，绝对高清，绝对靠谱！
+		.m-pics
+			div.img
+				em.iconn-79
+				img(src='../src/images/w360x240.jpg')
+			div.img
+				em.iconn-80
+				img(src='../src/images/w360x240.jpg')
+		.art-info
+			span.time 3分钟前
+			
+			span
+				em.iconn-19
+				| 23
+			span
+				em.iconn-28
+				| 34
+			span
+				em.iconn-22
+				| 12
+	// 单独一块
+
+
+	article.article
+		a.art-link(href="##")
+		.art-user
+			span.user-face
+				img(src="https://js-pre.meixincdn.com/m/h5/dist/images/gome_icon.png")
+			span.user-name 用户名称A
+		h2.art-tit 老店铺新装修！
+		.art-txt
+			p 本店始创于康熙年间，经过先后6000多年，研制出这款显示器，绝对高清，绝对靠谱！
+		.m-pics
+			.img
+				span.price 20000.00
+				img(src='../src/images/w236x236.jpg')
+			.img
+				span.price 20000.00
+				img(src='../src/images/w236x236.jpg')
+			.img
+				em.num 5
+				span.price 20000.00
+				img(src='../src/images/w236x236.jpg')
+		.art-info
+			span.time 3分钟前
+			
+			span
+				em.iconn-19
+				| 23
+			span
+				em.iconn-28
+				| 34
+			span
+				em.iconn-22
+				| 12
+	// 单独一块

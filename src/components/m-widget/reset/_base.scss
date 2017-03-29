@@ -1,0 +1,41 @@
+@charset "utf-8";
+// H5标准
+	// 标准颜色
+	// 标准字体大小
+
+// 颜色
+$color: 	#FFF	#DDD	#999	#666	#333	#FF5C5C;
+// 			一白 	二弟 	三九 	四六 	五三 	六红
+//示例：
+	// sass：
+		// .demo{ color: nth($color, 1); }
+		// .demo{ color: nth($color, 2); }
+	// css
+		// .demo{ color:#DDD; }
+		// .demo{ color:#999; }
+
+// 字体大小
+$fs20:		rem(20);
+$fs22:		rem(22);
+$fs24:		rem(24);
+$fs26:		rem(26);
+$fs28:		rem(28);
+$fs30:		rem(30);
+$fs32:		rem(32);
+$fs34:		rem(34);
+$fs36:		rem(36);
+$fs38:		rem(38);
+$fs40:		rem(40);
+$fs42:		rem(42);
+$fs44:		rem(44);
+$fs46:		rem(46);
+$fs48:		rem(48);
+$fs50:		rem(50);
+
+//示例：
+	// sass：
+		// .demo{ font-size: $24;}
+		// .demo{ font-size: $26;}
+	// css
+		// .demo{ font-size: .24rem; }
+		// .demo{ font-size: .26rem; }

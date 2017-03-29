@@ -1,0 +1,10 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define border radius
+// -----------------------------------------------------
+@mixin border-radius($radius:0,$prefixs:webkit){
+	@include prefix(border-radius,$radius,$prefixs);
+}

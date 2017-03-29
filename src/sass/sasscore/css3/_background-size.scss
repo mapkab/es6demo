@@ -1,0 +1,14 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define background-size
+// == @include background-size((para1 para2),$prefixs)
+// ++ $prefixs:webkit(default) || webkit || moz || ms || o || none
+// == $value:cover || content || length || percent
+// -----------------------------------------------------
+
+@mixin background-size($value:contain,$prefixs:webkit){
+	@include prefix(background-size,$value,$prefixs);
+}

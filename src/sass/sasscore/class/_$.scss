@@ -1,0 +1,7 @@
+@import "_opg.scss";
+
+@mixin _$($selectors...){
+	%_opg #{selector-nest($selectors...)}{
+		@content;
+	｝
+}

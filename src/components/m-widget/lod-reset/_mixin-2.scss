@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+// 边框线缩小
+%scale{
+	-webkit-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
+}
+%scaleY{
+	-webkit-transform: scaleY(0.5);
+	-ms-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+}
+%scaleX{
+	-webkit-transform: scaleX(0.5);
+	-ms-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+}
+
+// 屏幕局中显示
+%center{
+	position: fixed;
+	left:50%;
+	top:50%;
+	z-index: 20010;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+// after
+// 		宽度100%（left:0; right:0;）
+// 		高度100% (top:0; bottom:0;)
+//		无需可以定宽度为100%，特殊情况自定义；
+
+%after{
+	content: "";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+// 全屏幕
+%fixed-all{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 40000;// 全站统一后，样式更改为 200
+}
+
+
+// A 定位需要点击模块上
+%link{
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+
+//0.5像素边框
+//==========使用方法==========//
+// bor-all	四周边框线
+// bor-l 	左边框
+// bor-r 	右边框
+// bor-t 	上边框
+// bor-b 	下边框
+// 按钮btn一像素边框
+// .btn{
+// 		&:after{
+// 			border-color: #ddd;	只需要定义边框颜色
+// 			@extend %bor-all;	调用边框参数
+// 		}
+// 	}
+// 左边框、右边框、上边框、下边框
+// .btn{
+// 		&:after{
+// 			border-left-color: #ddd;	只需要定义相关边框颜色
+// 			@extend %bor-l;	调用相对边框参数
+// 		}
+// 	}
+//==========使用方法 End==========//
+%border{
+	content: "";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	box-sizing: border-box;
+}
+%bor-all{
+	width: 200%;
+	height: 200%;
+	border-width: 1px;
+	border-style: solid;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	// @extend %scale;
+	@extend %border;
+	@include scale(xy,(0.5,0.5),webkit moz);
+}
+%bor-l,
+%bor-r{
+	top: 0;
+	bottom: 0;
+	@extend %border;
+	@include scale(x,(0.5),webkit moz);
+}
+%bor-l{
+	left: 0;
+	border-left-width: 1px;
+	border-left-style: solid;
+}
+%bor-r{
+	right: 0;
+	border-right-width: 1px;
+	border-right-style: solid;
+	-webkit-transform-origin: 2px 0;
+	transform-origin: 2px 0;
+}
+%bor-t,
+%bor-b{
+	left: 0;
+	right: 0;
+	@extend %border;
+	@include scale(y,(0.5),webkit moz);
+}
+%bor-t{
+	top: 0;
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+%bor-b{
+	bottom: 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	-webkit-transform-origin: 0 2px;
+	transform-origin: 0 2px;
+}

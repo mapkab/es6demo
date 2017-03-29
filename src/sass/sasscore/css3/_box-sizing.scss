@@ -1,0 +1,12 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define box-sizing
+// == border-box || padding-box || content-box
+// -----------------------------------------------------
+
+@mixin box-sizing($type:border-box,$prefixs:webkit){
+	@include prefix(box-sizing,$type,$prefixs);
+}

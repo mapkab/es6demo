@@ -1,0 +1,13 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define transition
+// == $transition-para:(all linear 0.5s)
+// == @include transition((...,...)),webkit)
+// -----------------------------------------------------
+
+@mixin transition($transition-para:(all linear 0.5s),$prefixs:webkit){
+	@include prefix(transition,$transition-para,$prefixs);
+}

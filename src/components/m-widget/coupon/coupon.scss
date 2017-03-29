@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	.m-coupons{
+	    overflow: hidden;
+	    position: relative;
+	    .coupon-list{
+	    	overflow: auto;
+	    	white-space: nowrap;//强制一行显示内元素
+	    	-webkit-overflow-scrolling: touch;
+	    }
+	    li{
+	    	overflow: hidden;
+			// margin-right: -.08rem; inline-block 导致间距
+	    	display: inline-block;
+	    	position: relative;
+	    }
+	    a{
+	    	color: nth($color,1);
+	    	display: block;
+	    }
+	    .txt{
+	    	font-size: rem(28);
+	    	line-height: rem(36);
+	    }
+	    .date{
+	    	font-size: rem(20);
+	    	line-height: rem(28);
+	    	margin-top: rem(10);
+	    }
+	    .msg{
+	    	width: 1.2rem;
+	    	color: #F66A6B;
+	    	font-size: rem(20);
+	    	padding: rem(8 0 6);
+	    	line-height: 1;
+	    	text-align: center;
+	    	background-color: #fff;
+	    	transform: rotate(45deg);
+	    	-webkit-transform: rotate(45deg);
+	    	position: absolute;
+	    	right: rem(-42);
+	    	top: rem(4);
+	    }
+	    .msg-dis{
+	    	color: nth($color,1);
+	    	background-color: #bfbfbf;
+	    }
+	}
+
+	//店铺首页样式
+	.m-coupons-shop{
+		height: rem(150);
+		.coupon-list{
+			padding: rem(20 16 40 20);
+			background-color: #fff;
+		}
+		li{
+			padding: rem(8);
+			margin-right: rem(10);
+			background-color: #F66A6B;
+		}
+		a{
+			height: rem(100);
+			padding: rem(14 40 12 12);
+			border: 1px solid #fff;
+		}
+	}
+
+}//opg End

@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	.m-share-top,
+	.m-share-bottom{
+		background-color: #fff;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: -100%;
+		z-index: 40010;
+		.share-list{
+			display: block;
+			padding-top: rem(42);
+			overflow: hidden;	
+		}
+		.item{
+			width: 20%;
+			float: left;
+			text-align: center;
+		}
+		.share-icon{
+			width: rem(98);
+			height: rem(99);
+			display: inline-block;
+			overflow: hidden;
+			background: url(../../images/common/share-icon.png) no-repeat -99rem -99rem;
+			background-size: rem(97 526);
+		}
+		.weibo .share-icon{
+			background-position: 0 0;
+		}
+		.weixin .share-icon{
+			background-position: rem(0 -106);
+		}
+		.friends .share-icon{
+			background-position: rem(0 -214);
+		}
+		.qq .share-icon{
+			background-position: rem(0 -320);
+		}
+		.qzone .share-icon{
+			background-position: rem(0 -428);
+		}
+		.share-txt{
+			padding-top: rem(30);
+			padding-bottom: rem(40);
+		}
+		.share-close{
+			height: rem(100);
+			font-size: $fs28;
+			line-height: rem(100);
+			display: block;
+			text-align: center;
+			border-top: 1px solid #E4E4E4;
+		}
+	}
+	//底部分享
+	
+	.m-share-top{
+		top: 0;
+		bottom: auto;
+		padding-bottom: rem(30);
+		background: none;
+		img{
+			vertical-align: middle;
+			display: inline-block;
+		}
+		dt{
+			text-align: right;
+			padding: rem(50 50 0);
+			img{
+				width: rem(400);
+			}
+		}
+		dd{
+			color: nth($color,1);
+			font-size: $fs48;
+			text-align: center;
+			margin-top: rem(30);
+			&:nth-of-type(1) img{
+				width: rem(180);
+			}
+			&:nth-of-type(2) img{
+				width: rem(60);
+			}
+		}
+	}
+	//顶部分享
+ }

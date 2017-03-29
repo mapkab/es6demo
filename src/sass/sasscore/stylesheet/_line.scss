@@ -1,0 +1,185 @@
+//based on line() API
+//Arhtor: Mapk Jia Shilong
+
+@import '../utils/_prefix.scss';
+
+// ## Define _line()
+// == line((left,top),#ccc) or line(left,#ccc)
+// -----------------------------------------------------
+
+// line
+@mixin line($direct:top,$border-color:#c7c7c7,$radius:0){
+	position:relative;
+
+	// One Parameters
+	// ## ----------------------------------------------------------------
+	@if length($direct) == 1{
+		//left
+		@if $direct == left{
+			&:before{
+				@include pseudo($direct,$border-color,left top bottom width);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleX
+			@include scaleX;
+		}
+		//top
+		@if $direct == top{
+			&:before{
+				@include pseudo($direct,$border-color,left right top height);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleY
+			@include scaleY;
+		}
+		//right
+		@if $direct == right{
+			&:before{
+				@include pseudo($direct,$border-color,right top bottom width);
+				@include prefix(transform-origin,100% 0);
+			}
+			// scaleX
+			@include scaleX;
+		}
+		//bottom
+		@if $direct == bottom{
+			&:before{
+				@include pseudo($direct,$border-color,left right bottom height);
+				@include prefix(transform-origin,100% 100%);
+			}
+			// scaleY
+			@include scaleY;
+		}
+		// all
+		@if $direct == all {
+			&:before{
+				content:'';
+				position:absolute;
+				display:block;
+				left:0;
+				top:0;
+				width:200%;
+				height:200%;
+				border:1px solid $border-color;
+				@include box-sizing(border-box,webkit moz ms o);
+				@include prefix(transform-origin,0 0);
+				@include prefix(border-radius,rem($radius) * 2);
+			}
+			@include media(1.5,(0.5,0.5));
+		}
+	}
+	// Two Parameters
+	// ## ----------------------------------------------------------------
+	@if length($direct) == 2{
+
+		// == first para
+		// ## ------------------------------------------------------------
+		@if nth($direct,1) == left {
+			&:before{
+				@include pseudo(nth($direct,1),$border-color,left top bottom width);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleX
+			@include scaleX;
+		}
+		@if nth($direct,1) == right {
+			&:before{
+				@include pseudo(nth($direct,1),$border-color,right top bottom width);
+				@include prefix(transform-origin,100% 0);
+			}
+			// scaleX
+			@include scaleX;
+		}
+		@if nth($direct,1) == top {
+			&:before{
+				@include pseudo(nth($direct,1),$border-color,left top right height);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleY
+			@include scaleY;
+		}
+		@if nth($direct,1) == bottom {
+			&:before{
+				@include pseudo(nth($direct,1),$border-color,left bottom right height);
+				@include prefix(transform-origin,100% 100%);
+			}
+			// scaleY
+			@include scaleY;
+		}
+
+		// == second para
+		// ## ------------------------------------------------------------
+		@if nth($direct,2) == left {
+			&:after{
+				@include pseudo(nth($direct,2),$border-color,left top bottom width);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleX
+			@include scaleX(after);
+		}
+		@if nth($direct,2) == right {
+			&:after{
+				@include pseudo(nth($direct,2),$border-color,right top bottom width);
+				@include prefix(transform-origin,100% 0);
+			}
+			// scaleX
+			@include scaleX(after);
+		}
+		@if nth($direct,2) == top {
+			&:after{
+				@include pseudo(nth($direct,2),$border-color,left top right height);
+				@include prefix(transform-origin,0 0);
+			}
+			// scaleY
+			@include scaleY(after);
+		}
+		@if nth($direct,2) == bottom {
+			&:after{
+				@include pseudo(nth($direct,2),$border-color,left bottom right height);
+				@include prefix(transform-origin,100% 100%);
+			}
+			// scaleY
+			@include scaleY(after);
+		}
+	}
+}
+// before
+@mixin pseudo($direct,$border-color:#ccc,$attr:(left top right height)){
+	content:'';
+	position:absolute;
+	#{nth($attr,1)}:0;
+	#{nth($attr,2)}:0;
+	#{nth($attr,3)}:0;
+	#{nth($attr,4)}:1px;//width or height
+	display:block;
+	border-#{$direct}:1px solid $border-color;
+}
+// media
+@mixin media($ratio:1.5,$scale:0.5,$pesudo:before){
+	// webkit
+	@media (-webkit-min-device-pixel-ratio: $ratio){
+		&:#{$pesudo} {
+			@include prefix(transform,scale(#{$scale}));
+		}
+	}
+	// prototype
+	@media (min-device-pixel-ratio: $ratio){
+		&:#{$pesudo} {
+			@include prefix(transform,scale(#{$scale}));
+		}
+	}
+}
+// scaleX
+@mixin scaleX($pesudo:before){
+	// retian >= 1.5
+	@include media(1.5,(0.5,1),$pesudo);
+	// retian >= 3
+	@include media(3,(0.3,1),$pesudo);
+}
+// scaleY
+@mixin scaleY($pesudo:before){
+	// retian >= 1.5
+	@include media(1.5,(1,0.5),$pesudo);
+	// retian >= 3
+	@include media(3,(1,0.3),$pesudo);
+}

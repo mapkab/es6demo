@@ -1,0 +1,23 @@
+//based on ellipsis() API
+//Arhtor: Mapk Jia Shilong
+
+@mixin ellipsis($type:pc,$line:2){
+	@if $type == pc {
+		overflow:hidden; 
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		empty-cells:show;
+		@content;
+	}
+	@else if $type == mobile {
+	    overflow:hidden;
+	    word-break:break-all;
+	    display:-webkit-box;
+	    -webkit-box-orient:vertical; 
+	    -webkit-line-clamp:$line;
+	    @content;
+	}
+	@else{
+		@error $type is undefined;
+	}
+}

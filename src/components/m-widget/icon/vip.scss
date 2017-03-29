@@ -1,0 +1,65 @@
+@charset "UTF-8";
+// @ Css name： VIP等级
+// @ Author： matianye@
+// @ Date： 2017-03-20 15:00
+// @ Last Modified by： maty
+// @ Last Modified time：2017-03-20 15:00
+//==========================
+.m-vip{
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	width: rem(86);
+	height: rem(24);
+}
+%m-vip{
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	width: rem(86);
+	height: rem(24);
+	background-image: url(../../images/public/m-vip.png?version=20170320);
+	background-repeat: no-repeat;
+	background-size: rem(86 276);
+}
+.m-vip1{
+	@extend %m-vip;
+	background-position: 0 0;
+}
+.m-vip2{
+	@extend %m-vip;
+	background-position: 0 rem(-28);
+}
+.m-vip3{
+	@extend %m-vip;
+	background-position: 0 rem(-56);
+}
+.m-vip4{
+	@extend %m-vip;
+	background-position: 0 rem(-84);
+}
+.m-vip5{
+	@extend %m-vip;
+	background-position: 0 rem(-112);
+}
+.m-vip6{
+	@extend %m-vip;
+	background-position: 0 rem(-140);
+}
+.m-vip7{
+	@extend %m-vip;
+	background-position: 0 rem(-168);
+}
+.m-vip8{
+	@extend %m-vip;
+	background-position: 0 rem(-196);
+}
+.m-vip9{
+	@extend %m-vip;
+	background-position: 0 rem(-224);
+}
+.m-vip10{
+	@extend %m-vip;
+	background-position: 0 rem(-252);
+}
+

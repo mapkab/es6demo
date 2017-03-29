@@ -1,0 +1,208 @@
+@charset "UTF-8";
+@import "../../sasscore/reset/_utils.scss";
+@import "../../sasscore/stylesheet/_font-face.scss";
+
+// 定义基准字体大小
+html {
+	font-size: 100px;
+	-webkit-text-size-adjust: 100%;
+}
+
+// 清除内外边距样式
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p{
+	@include reset-box-model;
+	@include reset-font;
+}
+
+// 定义元素字体
+body, button, input, select, textarea{
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+// H5标签块化
+header, footer, section, article{
+	display: block;
+}
+
+// 原价删除线
+del {
+	@include reset-del;
+}
+
+// 重置列表元素
+ul, ol,{
+	@include reset-list-style;
+}
+
+// 重置标题文本样式
+h1, h2, h3, h4, h5, h6{
+	font-weight: 400;
+}
+
+// 限定边框,内边距放入框内
+html, body,div, article, footer, header, nav, section, p,h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dd, dt,span, em, a, i, strong, button, input, select, textarea,
+*:after,
+*:before {
+	@include box-sizing(border-box,webkit moz ms o);
+	-webkit-tap-highlight-color: transparent;
+}
+
+// 清楚样式
+a,input,textarea{
+	background: none;
+	// -webkit-tap-highlight-color: rgba(255,0,0,0);
+	outline: 0;
+}
+
+// 连接默认颜色
+a{
+	-webkit-tap-highlight-color: transparent;
+	@include reset-a(#333);
+}
+
+// 图片清除边距
+img {
+	display: block;
+	@include reset-img;
+}
+
+// 调用字体icon
+@include font-face(iconwap,20170112,mobile);
+// [class^="iconn-"],
+// [class*="iconn-"]{
+// 	color: #fff;
+// 	font-size: 120%;
+// }
+
+// cite
+cite{
+	font-style: normal;
+}
+
+// 重置全局文本颜色
+body {
+	position: relative;
+	overflow-x: hidden;
+	min-height: 100%;
+	line-height: 1;
+	font-size: 14px;
+	color: #333;
+	background-color: #f6f6f6;
+}
+
+// 公用属性
+.opg{
+	.show{
+		display: block;
+		}
+	.hidden{
+		display:none;
+	}
+	.block{
+		display:block;
+	}
+	.inline{
+		display:inline;
+	}
+	.inline-block{
+		display:inline-block;
+	}
+	.fl{
+		float:left;
+	}
+	.fr{
+		float:right;
+	}
+	small{
+		color: #999;
+		font-size: 65%;
+	}
+	.red{
+		color: #ED5B5D;
+	}
+	.del{
+		color: #999;
+		font-size: 87%;
+	}
+	.img-box{
+		overflow: hidden;
+		img{
+			max-width: 100%;
+		}
+	}
+
+	// 单行&多行截字
+	.search-list li{
+		overflow:hidden;
+		empty-cells:show;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	.item-txt{
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		word-break: break-all;
+		-webkit-box-orient: vertical; 
+	}
+	// 公用颜色
+
+	.item-pay{
+		color: #999;
+		font-size: .24rem;
+	}
+	// font-size 24px; color #999
+
+	.m-switch{
+		width: rem(76);
+		height: rem(44);
+		display: block;
+		position: relative;
+		@include prefix(border-radius,rem(76),webkit);
+
+		background-color: #ff5c5c;
+		-webkit-transition: background-color 0.1s;
+		transition: background-color 0.1s;
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: -webkit-transform 0.35s;
+			transition: transform 0.35s, -webkit-transform 0.35s;
+		}
+		&:before {
+			width: rem(76);
+			height: rem(44);
+			@include prefix(border-radius,rem(76),webkit);
+			background-color: #f2f2f2;
+		}
+		&:after {
+			width: rem(44);
+			height: rem(44);
+			@include prefix(border-radius,rem(44),webkit);
+			background-color: #FFFFFF;
+		}
+
+		&.active{
+			background-color: #ff5c5c;
+		}
+		&.active:before {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		}
+		&.active:after {
+			margin-left: rem(-12);
+			-webkit-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+	}
+	// 滑动开关
+
+}
+//========== End ==========//
+
+
+

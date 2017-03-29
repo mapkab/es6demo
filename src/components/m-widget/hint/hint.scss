@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	
+	.page-no{
+		color: #ccc;
+		font-size: $fs24;
+		line-height: rem(34);
+		text-align: center;
+		padding: rem(38 0);
+		span{
+			display: inline-block;
+			background: url("../../images/common/loading.gif") no-repeat;
+			width: rem(40);
+			height: rem(40);
+			background-size: cover;
+			vertical-align: rem(-10);
+			margin-right: rem(10);
+		}
+	}
+	// 无商品提示
+
+	
+	.page-more{
+		color: nth($color,3);
+		display: block;
+		font-size: $fs28;
+		line-height: rem(40);
+		text-align: center;
+		padding: rem(30);
+		margin: rem(20 0);
+		background-color: #fff;
+	}
+	// 更多商品
+
+	
+	.page-num{
+		height: rem(50);
+		line-height: rem(50);
+		color: nth($color,1);
+		font-size: $fs28;
+		@include prefix(border-radius,rem(16),webkit);
+		background-color: rgba(51,51,51,.9);
+		position: fixed;
+		left: 50%;
+		bottom: 1.08rem;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		span{
+			display: inline-block;
+			min-width: rem(40);
+			padding: rem(0 10);
+			text-align: center;
+			&:first-child{
+				padding-right: rem(6);
+			}
+			&:last-child{
+				padding-left: rem(6);
+			}
+		}
+	}
+	// 列表页码
+}

@@ -1,0 +1,12 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define animations
+// ------------------------------------------------------
+
+// animation
+@mixin animation($animation-para,$prefixs) {
+  @include prefix(animation,$animation-para,$prefixs);
+}

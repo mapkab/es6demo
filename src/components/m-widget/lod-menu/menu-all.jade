@@ -1,0 +1,168 @@
+h2 公用结构
+ul.menu-list
+	li.item.active
+		i.num
+		p.txt 菜单一
+	li.item
+		p.txt 菜单二
+	li.item
+		p.txt 菜单三
+	li.item
+		p.txt 菜单四
+
+h2 顶部导航-more
+ul.menu-list.menu-list-more
+	li.item.active
+		em.iconn-44
+		p.txt 首页
+	li.item
+		em.iconn-15
+		p.txt 分类
+	li.item
+		em.iconn-32
+		p.txt 购物车
+	li.item
+		em.iconn-90
+		p.txt 我的
+// /顶部导航-更多
+
+h2 页底导航
+ul.menu-list.menu-list-foot
+	li.item.active
+		p.txt 触屏版
+	li.item
+		p.txt 客户端
+	li.item
+		p.txt 退出
+// /页底导航
+
+h2 页底全选删除
+.del-menu
+	a(href="javascript:;").check-all-btn
+		em.iconn-38
+		em.iconn-39
+		| 全选
+	a(href="javascript:;").m-btn 删除
+// /页底全选删除
+
+h2 搜索-筛选结构
+ul.menu-list
+	li.item.active
+		i.num
+		p.txt 菜单一
+	li.item
+		p.txt 菜单二
+	li.item
+		p.txt 菜单三
+			span
+			// /span.up
+			// /span.down
+	li.item
+		p.txt 菜单四
+// /搜索结构
+
+h2 个人中心-我的订单
+ul.menu-list.menu-list-order
+	li.item.active
+		em.iconn-61
+		p.txt 待付款
+	li.item
+		em.iconn-63
+		p.txt 待收货
+	li.item
+		em.iconn-62
+		p.txt 待评价
+	li.item
+		em.iconn-19
+		p.txt 退款/售后
+// /我的订单
+
+h2 店铺导航-菜单
+ul.menu-list.menu-list-shoptop
+	li.item.active
+		i.num
+		em.iconn-15
+		p.txt 首页
+	li.item
+		em.iconn-50
+		p.txt 全部
+	li.item
+		i.num
+		em.iconn-26
+		p.txt 促销
+	li.item
+		em.iconn-36
+		p.txt 动态
+// /菜单
+
+h2 店铺导航-二级菜单
+ul.menu-list.menu-list-shopmin
+	li.item.active
+		p.txt 综合
+	li.item
+		p.txt 全部
+	li.item
+		p.txt 销量
+	li.item
+		p.txt 价格
+	li.item
+		p.txt 上新
+// /二级菜单
+
+h2 店铺导航-底部按钮
+ul.menu-list.menu-list-shopbtn
+	li.item.active
+		a(href="##")
+			i.num
+			em.iconn-15
+			cite.txt 商品分类
+	li.item
+		a(href="##")
+			em.iconn-32
+			cite.txt 购物车
+// /底部按钮
+
+h2 店铺导航-底部按钮2
+ul.menu-list.menu-list-shopbtn.menu-list-btns
+	li.item
+		a(href="##")
+			em.iconn-83
+			cite.txt 全部商品
+	li.item
+		a(href="##")
+			em.iconn-15
+			cite.txt 商品分类
+			.tab-nav.nav-big
+				i.triangle
+				ul
+					-for(i=0;i<4;i++) //循环四个同样的LI
+						li 商品名1
+	li.item
+		a(href="##")
+			em.iconn-32
+			cite.txt 购物车
+// /底部按钮
+// /店铺导航
+
+h2 回到主页菜单
+.m-navmore(style="height: 1.1rem;")
+	ul
+		li
+			a(href="##")
+				em.iconn-44
+				p 首页
+		li
+			a(href="##")
+				em.iconn-15
+				p 分类
+		li
+			a(href="##")
+				em.iconn-32
+				p 购物车
+		li
+			a(href="##")
+				em.iconn-90
+				p 我的
+// /回到主页菜单
+
+

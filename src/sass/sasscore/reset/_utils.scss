@@ -1,0 +1,113 @@
+@charset "UTF-8";
+//based on "gomeplusUI v1.0's reset";
+//Author: Mapk Jia Shilong
+
+@import "../css3/_box-sizing.scss";
+
+//reset box-model API
+@mixin reset-box-model{
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	outline: 0;
+}
+
+//reset box-sizing API；
+@mixin reset-box-sizing{
+	@include box-sizing(border-box,webkit moz ms o);
+}
+
+//reset font API;
+@mixin reset-font{
+	font:{
+		family: inherit;
+		weight: inherit;
+		size: 100%;
+		style: normal;
+	}
+	vertical-align: baseline;
+}
+
+//reset html API；
+@mixin reset-html($font-size){
+	font-size:$font-size;
+	-webkit-text-size-adjust: 100%;
+}
+
+//reset body API；
+@mixin reset-body($bgcolor,$color){
+	line-height: 1;
+	background: $bgcolor;
+	color: $color;
+}
+
+//reset a API；
+@mixin reset-a($color){
+	color:$color;
+	&:link,&:visited,&:hover,&:active{
+		text-decoration: none;
+		@include reset-focus;
+	}
+}
+
+//reset ul,ol API;
+@mixin reset-list-style{
+	list-style: none;
+}
+
+//reset img API;
+@mixin reset-img{
+	border: 0 none;
+	vertical-align: middle;
+}
+
+//reset input－focus API;
+@mixin reset-focus{
+	outline: 0;
+}
+
+//reset del API；
+@mixin reset-del{
+	text-decoration: line-through;
+}
+
+// reset input, textarea API1;
+@mixin reset-cell{
+	$map:&;
+	@include reset-focus;
+	@if nth($map,1){
+		&:-webkit-autofill{
+			background-color: #fff;
+			background-image: none;
+		}
+	}
+	@if nth($map,2){
+		resize:none;
+	}
+}
+
+//reset table API；
+@mixin reset-table{
+	border-spacing: 0;
+	vertical-align: middle;
+	border-collapse: collapse;
+}
+
+//reset table（th、td） API；
+@mixin reset-table-cell{
+	text-align: left;
+	vertical-align: middle;
+	font-weight: normal;
+}
+
+//clearfix API
+@mixin clearfix{
+	*zoom:1;
+    &:after{
+        content:"";
+        display:block;
+        height:0;
+        clear:both;
+        visibility:hidden;
+    }
+}

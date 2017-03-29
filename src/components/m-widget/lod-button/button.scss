@@ -1,0 +1,103 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+// disabled="disabled" 禁用按钮样式
+.opg{
+	%go{
+		width: rem(70);
+		height: rem(70);
+		background: url(../../images/common/go-bg.png) no-repeat -99rem -99rem;
+		background-size: rem(230 70);
+		position: fixed;
+		right: rem(40);
+		bottom: rem(138);
+		z-index: 99;
+	}
+	.go-top{
+		@extend %go;
+		background-position: 0 0;
+	}
+	.go-home{
+		@extend %go;
+		margin-bottom: rem(-108);
+		background-position: rem(-80 0);
+	}
+
+	// button
+	.m-btn{
+		min-width: rem(181);
+		color: nth($color,1);
+		font-size: $fs26;
+		line-height: inherit;
+		text-align: center;
+		padding: rem(20 30);
+		display: inline-block;
+		// overflow: hidden;
+		vertical-align: top;
+		background-color: #FF5C5C;
+		@include prefix(border-radius, rem(110), webkit);
+		position: relative;
+		// 按钮公用样式
+		&:after{
+			@include border(all,1px,#FF5C5C);
+			@include prefix(border-radius, rem(110), webkit);
+		}
+
+		&[disabled="disabled"]{
+			background-color: #D8D8D8;
+			&:after{
+				border-color: #D8D8D8;
+			}
+		}
+		// 按钮禁用样式
+		
+		&.m-btn-black{
+			max-width: rem(180);
+			padding-left: 0;
+			padding-right: 0;
+			border-color: #333;
+			background-color: #333;
+			&:after{
+				border-color: #333;
+			}
+			&[disabled="disabled"]{
+				background-color: #D8D8D8;
+				&:after{
+					border-color: #D8D8D8;
+				}
+			}
+		}
+		&.btn-bor{
+			color: nth($color,6);
+			background-color: #fff;
+		}
+		&.btn-red{
+			background-color: #FF5C5C;
+		}
+		&.btn-black{
+			background-color: #333;
+		}
+	}
+	.m-btn-big{
+		min-width: rem(590);
+		max-width: rem(590);
+		min-height: rem(88);
+		font-size: $fs32;
+		padding-top: rem(25);
+		padding-bottom: rem(25);
+		// 适用于登录注册
+		
+		&[disabled="disabled"]{
+			border-color: #FF9F9F;
+			background-color: #FF9F9F;
+		}
+		// 禁用样式
+		
+		&.active{
+			border-color: #D14648;
+			background-color: #D14648;
+		}
+		// 出发样式
+	}
+ }

@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+// 屏幕局中显示
+@mixin center{
+	position: fixed;
+	left:50%;
+	top:50%;
+	z-index: 40010;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+// after
+// 		宽度100%（left:0; right:0;）
+// 		高度100% (top:0; bottom:0;)
+//		无需可以定宽度为100%，特殊情况自定义；
+
+@mixin after{
+	content: "";
+	display: block;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+// 全屏幕
+@mixin fixed-all{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 40000;// 全站统一后，样式更改为 200
+}
+
+
+// A 定位需要点击模块上
+@mixin link{
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+
+// border
+@mixin border($direction, $size, $borderColor, $prefixes:webkit ) {
+	content: " ";
+	position: absolute;
+	@if $direction == all {
+		// content: " ";
+		width: 200%;
+		height: 200%;
+		// position: absolute;
+		top: 0;
+		left: 0;
+		border: $size solid $borderColor;
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+	} 
+	@if $direction == top {
+		height: 1px;
+		// content: " ";
+		// position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		border-top: $size solid $borderColor;
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+		-webkit-transform: scaleY(0.5);
+		transform: scaleY(0.5);
+	} 
+	@else if $direction == right {
+		width: 1px;
+		// content: " ";
+		// position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-right: $size solid $borderColor;
+		// -webkit-transform-origin: 100% 0;
+		// transform-origin: 100% 0;
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+		-webkit-transform: scaleX(0.5);
+		transform: scaleX(0.5);
+	} 
+	@else if $direction == bottom {
+		height: 1px;
+		// content: " ";
+		// position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border-bottom: $size solid $borderColor;
+		-webkit-transform-origin: 0 100%;
+		transform-origin: 0 100%;
+		-webkit-transform: scaleY(0.5);
+		transform: scaleY(0.5);
+	} 
+	@else if $direction == left {
+		width: 1px;
+		// content: " ";
+		// position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		border-left: $size solid $borderColor;
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+		-webkit-transform: scaleX(0.5);
+		transform: scaleX(0.5);
+	}
+}
+

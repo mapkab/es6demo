@@ -1,0 +1,230 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## bounce-in
+// == @include bounce-in() or @include bounce-in(webkit moz)
+// ------------------------------------------------------
+
+// ## bounce-in
+@mixin bounce-in($prefixs:webkit){
+	@include keyframes(bounce-in,$prefixs){
+		0% {
+			opacity:0;
+			@include scale((0.3),$prefixs);
+		}
+		50% {
+			opacity:1;
+			@include scale((1.05),$prefixs);
+		}
+		70% {
+			@include scale((0.9),$prefixs);
+		}
+		100% {
+			@include scale((1),$prefixs);
+		}
+	}
+	.bounce-in {
+		@include animation((bounce-in 0.5s 0.1s),$prefixs);
+	}
+}
+
+// ## bounce-in-down
+@mixin bounce-in-down($prefixs:webkit){
+	@include keyframes(bounce-in-down,$prefixs){
+		0% {
+			opacity: 0;
+			@include translate((-400%,y),$prefixs);
+		}
+		60% {
+			opacity: 1;
+			@include translate((30px,y),$prefixs);
+		}
+		80% {
+			@include translate((-10px,y),$prefixs);
+		}
+		100% {
+			@include translate((0,y),$prefixs);
+		}
+	}
+	.bounce-in-down{
+		@include animation((bounce-in-down 0.5s 0.1s),$prefixs);
+	}
+}
+
+// ## bounce-in-up
+@mixin bounce-in-up($prefixs:webkit){
+	@include keyframes(bounce-in-up,$prefixs){
+		0% {
+			opacity: 0;
+			@include translate((400%,y),$prefixs);
+		}
+		60% {
+			opacity: 1;
+			@include translate((-20px,y),$prefixs);
+		}
+		80% {
+			@include translate((10px,y),$prefixs);
+		}
+		100% {
+			@include translate((0,y),$prefixs);
+		}
+	}
+	.bounce-in-up{
+		@include animation((bounce-in-up 0.5s 0.1s),$prefixs);
+	}
+}
+
+// ## bounce-in-right
+@mixin bounce-in-right($prefixs:webkit){
+	@include keyframes(bounce-in-right,$prefixs){
+		0% {
+			opacity: 0;
+			@include translate((-400%,x),$prefixs);
+		}
+		60% {
+			opacity: 1;
+			@include translate((30px,x),$prefixs);
+		}
+		80% {
+			@include translate((-10px,x),$prefixs);
+		}
+		100% {
+			@include translate((0,x),$prefixs);
+		}
+	}
+	.bounce-in-right{
+		@include animation((bounce-in-right 0.5s 0.1s),$prefixs);
+	}
+}
+
+// ## bounce-in-left
+@mixin bounce-in-left($prefixs:webkit){
+	@include keyframes(bounce-in-left,$prefixs){
+		0% {
+			opacity: 0;
+			@include translate((400%,x),$prefixs);
+		}
+		60% {
+			opacity: 1;
+			@include translate((-30px,x),$prefixs);
+		}
+		80% {
+			@include translate((10px,x),$prefixs);
+		}
+		100% {
+			@include translate((0,x),$prefixs);
+		}
+	}
+	.bounce-in-left{
+		@include animation((bounce-in-left 0.5s 0.1s),$prefixs);
+	}
+}
+
+// ## bounce-out
+// == @include bounce-out() or @include bounce-out(webkit moz)
+// ------------------------------------------------------
+
+// ## bounce-out
+@mixin bounce-out($prefixs:webkit){
+	@include keyframes(bounce-out,$prefixs){
+		0% {
+			@include scale((1),$prefixs);
+		}
+		25% {
+			@include scale((0.95),$prefixs);
+		}
+		50% {
+			opacity: 1;
+			@include scale((1.1),$prefixs);
+		}
+		100% {
+			opacity: 0;
+			@include scale((0),$prefixs);
+		}	
+	}
+	.bounce-out {
+		@include animation((bounce-out 0.5s 0.1s both),$prefixs);
+	}
+}
+
+// ## bounce-out-down
+@mixin bounce-out-down($prefixs:webkit){
+	@include keyframes(bounce-out-down,$prefixs){
+		0% {
+			@include translate((0,y),$prefixs);
+		}
+		20% {
+			opacity: 1;
+			@include translate((-20px,y),$prefixs);
+		}
+		100% {
+			opacity: 0;
+			@include translate((400%,y),$prefixs);
+		}
+	}
+	.bounce-out-down {
+		@include animation((bounce-out-down 0.5s 0.1s both),$prefixs);
+	}
+}
+
+// ## bounce-out-up
+@mixin bounce-out-up($prefixs:webkit){
+	@include keyframes(bounce-out-up,$prefixs){
+		0% {
+			@include translate((0,y),$prefixs);
+		}
+		20% {
+			opacity: 1;
+			@include translate((20px,y),$prefixs);
+		}
+		100% {
+			opacity: 0;
+			@include translate((-400%,y),$prefixs);
+		}
+	}
+	.bounce-out-up {
+		@include animation((bounce-out-up 0.5s 0.1s both),$prefixs);
+	}
+}
+
+// ## bounce-out-left
+@mixin bounce-out-left($prefixs:webkit){
+	@include keyframes(bounce-out-left,$prefixs){
+		0% {
+			@include translate((0,x),$prefixs);
+		}
+		20% {
+			opacity: 1;
+			@include translate((20px,x),$prefixs);
+		}
+		100% {
+			opacity: 0;
+			@include translate((-400%,x),$prefixs);
+		}
+	}
+	.bounce-out-left {
+		@include animation((bounce-out-left 0.5s 0.1s both),$prefixs);
+	}
+}
+
+// ## bounce-out-right
+@mixin bounce-out-right($prefixs:webkit){
+	@include keyframes(bounce-out-right,$prefixs){
+		0% {
+			@include translate((0,x),$prefixs);
+		}
+		20% {
+			opacity: 1;
+			@include translate((-20px,x),$prefixs);
+		}
+		100% {
+			opacity: 0;
+			@include translate((400%,x),$prefixs);
+		}
+	}
+	.bounce-out-right {
+		@include animation((bounce-out-right 0.5s 0.1s both),$prefixs);
+	}
+}

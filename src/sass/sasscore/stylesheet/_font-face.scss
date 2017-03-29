@@ -1,0 +1,78 @@
+//based on font-face() API
+//Arhtor: Mapk Jia Shilong
+
+@mixin font-face($name,$version,$type:pc){
+  @font-face{
+    font:{
+      family: $name;
+    }
+    src: filename($name,$version,$type);
+  }
+  @if $type == pc {
+    .icon{
+        @include icon($name);
+    }
+    }@else if $type == mobile{
+      [class^="iconn-"],
+      [class*="iconn-"] {
+          @include icon($name);
+      }
+      [class^="iconn-"]:before,
+      [class*="iconn-"]:before{
+          display: block;
+      }
+    }
+}
+
+$set-file-path:      '../../images/iconfont/';
+@function filename($name,$version,$type){
+  @if $type == mobile{
+    @return
+       url('#{$set-file-path}#{$name}.ttf?#{$version}') format('truetype'),
+       url('#{$set-file-path}#{$name}.woff?#{$version}') format('woff'),
+       url('#{$set-file-path}#{$name}.svg?#{$version}') format('svg');  
+  }
+  @else if $type == pc{
+    @return
+       url('#{$set-file-path}#{$name}.eot?#{$version}#iefix') format('embedded-opentype'),
+       url('#{$set-file-path}#{$name}.ttf?#{$version}') format('truetype'),
+       url('#{$set-file-path}#{$name}.woff?#{$version}') format('woff'),
+       url('#{$set-file-path}#{$name}.svg?#{$version}') format('svg');  
+  } 
+  @else{
+    @error $type is undefined;
+  }
+}
+
+// @function filename($name,$version,$type){
+//   @if $type == mobile{
+//     @return
+//        url(../../images/iconfont/#{$name}.ttf?#{$version}) format('truetype'),
+//        url(../../images/iconfont/#{$name}.woff?#{$version}) format('woff'),
+//        url(../../images/iconfont/#{$name}.svg?#{$version}) format('svg');  
+//   }
+//   @else if $type == pc{
+//     @return
+//        url(../../images/iconfont/#{$name}.eot?#{$version}#iefix) format('embedded-opentype'),
+//        url(../../images/iconfont/#{$name}.ttf?#{$version}) format('truetype'),
+//        url(../../images/iconfont/#{$name}.woff?#{$version}) format('woff'),
+//        url(../../images/iconfont/#{$name}.svg?#{$version}) format('svg');  
+//   } 
+//   @else{
+//     @error $type is undefined;
+//   }
+// }
+
+@mixin icon($name){
+  font-family: #{$name} !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

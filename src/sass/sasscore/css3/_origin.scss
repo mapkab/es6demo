@@ -1,0 +1,13 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define origin
+// == $pos:center center(default)
+// == $prefixs:webkit(default) || moz || ms || o || none
+// -----------------------------------------------------
+
+@mixin origin($pos:center center,$prefixs:webkit){
+	@include prefix(transform-origin,$pos,$prefixs);
+}

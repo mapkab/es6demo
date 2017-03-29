@@ -1,0 +1,57 @@
+//based on flex() API
+//Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+@mixin flex($horizontal:left,$vertical:top){
+	//defaults
+	@include prefix-value(display,box,webkit moz);
+	@include prefix-value(display,flexbox,ms);
+	@include prefix-value(display,flex);
+	// horizontal
+	@if $horizontal == left {
+		@include prefix(box-pack,start,webkit moz);
+		@include prefix(flex-pack,start,ms);
+		@include prefix(justify-content,flex-start);
+	}
+	@else if $horizontal == center{
+		@include prefix(box-pack,center,webkit moz ms);
+		@include prefix(flex-pack,center,ms);
+		@include prefix(justify-content,center);
+	}
+	@else if $horizontal == right{	
+		@include prefix(box-pack,flex-end,webkit moz);
+		@include prefix(flex-pack,flex-end,ms);
+		@include prefix(justify-content,flex-end);
+	}
+	@else if $horizontal == space{
+		@include prefix(box-pack,justify,webkit moz);
+		@include prefix(flex-pack,justify,ms);
+		@include prefix(justify-content,space-between);
+	}
+	// vertical
+	@if $vertical == top {
+		@include prefix(box-align,start,webkit moz);
+		@include prefix(flex-align,start,ms);
+		@include prefix(align-items,flex-start);
+	}
+	@else if $vertical == center {
+		@include prefix(box-align,center,webkit);
+		@include prefix(flex-align,center,ms);
+		@include prefix(align-items,center);
+	}
+	@else if $vertical == bottom {
+		@include prefix(box-align,end,webkit);
+		@include prefix(flex-align,end,ms);
+		@include prefix(align-items,flex-end);
+	}
+}
+@mixin flex-col($column:1){
+	@include prefix(box-flex,$column);
+	@include prefix(flex,$column,webkit ms);
+}
+@mixin flex-box(){
+	@include prefix-value(display,box,webkit moz);
+	@include prefix-value(display,flex-box,ms);
+	@include prefix-value(display,flex);
+}

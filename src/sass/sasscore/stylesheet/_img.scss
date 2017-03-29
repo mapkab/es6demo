@@ -1,0 +1,14 @@
+//based on font-face() API
+//Arhtor: Mapk Jia Shilong
+
+// ## Define css stylesheet img url
+// == $img-name must have quotation ''
+// ++ @include img('test.png');
+// -----------------------------------------------------
+
+$set-img-path:          '../../images/public/';
+@mixin img($img-name,$pos:left top,$repeat:no-repeat,$img-url:$set-img-path){
+  background-image:url('#{$img-url}#{$img-name}');
+  background-repeat:$repeat;
+  background-position:$pos;
+}

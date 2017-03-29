@@ -1,0 +1,365 @@
+@charset "UTF-8";
+@import "../../sasscore/reset/_utils.scss";
+@import "../../sasscore/stylesheet/_font-face.scss";
+
+// 定义基准字体大小
+html {
+	font-size: 50px;
+	-webkit-text-size-adjust: 100%;
+}
+
+// 清除内外边距样式
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p{
+	@include reset-box-model;
+	@include reset-font;
+}
+
+// 定义元素字体
+body, button, input, select, textarea{
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+// H5标签块化
+header, footer, section, article{
+	display: block;
+}
+
+// 原价删除线
+del {
+	@include reset-del;
+}
+
+// 重置列表元素
+ul, ol,{
+	@include reset-list-style;
+}
+
+// 重置标题文本样式
+h1, h2, h3, h4, h5, h6{
+	font-weight: 400;
+}
+
+// 限定边框,内边距放入框内
+html, body,div, article, footer, header, nav, section, p,h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dd, dt,span, em, a, i, strong, button, input, select, textarea,
+*:after,
+*:before {
+	@include box-sizing(border-box,webkit moz ms o);
+	-webkit-tap-highlight-color: transparent;
+}
+
+// 清楚样式
+a,input,textarea{
+	background: none;
+	// -webkit-tap-highlight-color: rgba(255,0,0,0);
+	outline: 0;
+}
+
+// 连接默认颜色
+a{
+	-webkit-tap-highlight-color: transparent;
+	@include reset-a(#333);
+}
+
+// 图片清除边距
+img {
+	display: block;
+	max-width: 100%;
+	@include reset-img;
+}
+
+// 调用字体icon
+@include font-face(iconwap,20170321,mobile);
+// [class^="iconn-"],
+// [class*="iconn-"]{
+// 	color: #fff;
+// 	font-size: 120%;
+// }
+
+// cite
+cite{
+	font-style: normal;
+}
+
+// 重置全局文本颜色
+body {
+	position: relative;
+	overflow-x: hidden;
+	max-width: 640px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100%;
+	line-height: 1;
+	font-size: 14px;
+	color: #333;
+	background-color: #f6f6f6;
+}
+
+// 公用属性
+.opg{
+	// .show{
+	// 	display: block;
+	// 	}
+	// .hidden{
+	// 	display:none;
+	// }
+	// .block{
+	// 	display:block;
+	// }
+	// .inline{
+	// 	display:inline;
+	// }
+	// .inline-block{
+	// 	display:inline-block;
+	// }
+	// .fl{
+	// 	float:left;
+	// }
+	// .fr{
+	// 	float:right;
+	// }
+	// small{
+	// 	color: #999;
+	// 	font-size: 65%;
+	// }
+	// .red{
+	// 	color: #ED5B5D;
+	// }
+	// .del{
+	// 	color: #999;
+	// 	font-size: 87%;
+	// }
+	// .img-box{
+	// 	overflow: hidden;
+	// 	img{
+	// 		max-width: 100%;
+	// 	}
+	// }
+
+	// // 单行&多行截字
+	// .search-list li{
+	// 	overflow:hidden;
+	// 	empty-cells:show;
+	// 	text-overflow:ellipsis;
+	// 	white-space:nowrap;
+	// }
+	// .item-txt{
+	// 	overflow: hidden;
+	// 	display: -webkit-box;
+	// 	-webkit-line-clamp: 2;
+	// 	word-break: break-all;
+	// 	-webkit-box-orient: vertical; 
+	// }
+	// // 公用颜色
+
+	// .item-pay{
+	// 	color: #999;
+	// 	font-size: .24rem;
+	// }
+	// // font-size 24px; color #999
+
+	
+	// ========================================
+	// gomeplusUI
+	// 规范确定者：UI-xunan@ | yueshuaimin@
+	// 规范实施者：ic-builder@
+	// 规范使用处：仅限使用全新plus页面
+	// ========================================
+
+	// ========== flex ==========
+	.flex-box{
+		@include flex-box();
+		-webkit-align-items: center;
+		align-items: center;
+		&.flex-start{	// 内容开始位置对齐
+			-webkit-align-items: flex-start;
+			align-items: flex-start;
+		}
+		&.flex-end{	// 内容结尾位置对齐
+			-webkit-align-items: flex-end;
+			align-items: flex-end;
+		}
+	}
+	.flex-cell,
+	.flex-bd{
+		@include flex-col(1);
+	}
+	.flex-cell2{
+		@include flex-col(2);
+	}
+	.flex-ft{
+		text-align: right;
+	}
+
+
+	// ========== border ==========
+	.bor-all{	// 四边线
+		@include line(all,#ddd);
+	}
+	.bor-t{		// 上边线
+		@include line(top,#ddd);
+	}
+	.bor-r{		// 右边线
+		@include line(right,#ddd);
+	}
+	.bor-b{		// 下边线
+		@include line(bottom,#ddd);
+	}
+	.bor-l{		// 左边线
+		@include line(left,#ddd);
+	}
+
+	.bor-t.flex-boxs:before,
+	.bor-r.flex-boxs:before,
+	.bor-b.flex-boxs:before,
+	.bor-l.flex-boxs:before{
+		display: none;
+	}
+	.bor-t.flex-boxs .flex-box:not(:first-child){
+		@include line(top,#ddd);
+	}
+	.bor-r.flex-boxs .flex-box:not(:nth-last-child(1)){
+		@include line(right,#ddd);
+	}
+	.bor-b.flex-boxs .flex-box:not(:nth-last-child(1)){
+		@include line(bottom,#ddd);
+	}
+	.bor-l.flex-boxs .flex-box:not(:first-child){
+		@include line(left,#ddd);
+	}
+
+	// ========== color ==========
+
+	// FF5C5C
+	.c-f5c{
+		color: #FF5C5C;
+	}
+	// 333
+	.c-3{
+		color: #333;
+	}
+	// 666
+	.c-6{
+		color: #666;
+	}
+	// 666	
+	.c-9{
+		color: #999;
+	}
+	// FFF
+	.c-f{
+		color: #FFF;
+	}
+	// B3B3B3
+	.c-b3{
+		color: #B3B3B3;
+	}
+	// DDD
+	.c-d{
+		color: #DDD;
+	}
+	// blue
+	.c-79{
+		color: #78BEE9;
+	}
+	// yellow
+	.c-f4{	// plus规范
+		color: #FFCD44;
+	}
+	.c-f0{	// 在线规范
+		color: #FF8000;
+	}
+
+
+	// ========== background-color ==========
+	.bg-f5c{
+		background-color: #ff5c5c;
+	}
+	.bg-0{
+		background-color: #000;
+	}
+	.bg-f3{
+		background-color: #f3f3f3;
+	}
+	.bg-f6{
+		background-color: #f6f6f6;
+	}
+	.bg-d8{
+		background-color: #d8d8d8;
+	}
+	.bg-f3f5f7{
+		background-color: #f3f5f7;
+	}
+	.bg-f3f5f7{
+		background-color: #f3f5f7;
+	}
+
+
+
+	// m-checkbox
+	.m-checkbox{
+		font-size: 0;
+		.c-item{
+			display: inline-block;
+			font-size: .3rem;
+		}
+	}
+
+	// m-radio
+	.m-radio{
+		font-size: 0;
+		.r-item{
+			display: inline-block;
+			font-size: .3rem;
+		}
+	}
+
+
+	.m-switch{
+		width: rem(76);
+		height: rem(44);
+		display: block;
+		position: relative;
+		@include prefix(border-radius,rem(76),webkit);
+
+		background-color: #ff5c5c;
+		-webkit-transition: background-color 0.1s;
+		transition: background-color 0.1s;
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: -webkit-transform 0.35s;
+			transition: transform 0.35s, -webkit-transform 0.35s;
+		}
+		&:before {
+			width: rem(76);
+			height: rem(44);
+			@include prefix(border-radius,rem(76),webkit);
+			background-color: #f2f2f2;
+		}
+		&:after {
+			width: rem(44);
+			height: rem(44);
+			@include prefix(border-radius,rem(44),webkit);
+			background-color: #FFFFFF;
+		}
+
+		&.active{
+			background-color: #ff5c5c;
+		}
+		&.active:before {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		}
+		&.active:after {
+			margin-left: rem(-12);
+			-webkit-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+	}
+	// 滑动开关
+}
+//========== End ==========//

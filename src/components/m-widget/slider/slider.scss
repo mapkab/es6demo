@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	// m-slider
+	%public{
+		overflow: hidden;
+		position: relative;
+	}
+	.m-slider{
+		@extend %public;
+		.slider-main{
+			@extend %public;
+			overflow-x: auto;
+			padding-bottom: rem(30);
+			margin-bottom: rem(-30);
+			white-space: nowrap;//强制一行显示内元素
+			-webkit-overflow-scrolling: touch;
+		}
+		.slider-item{
+			display: inline-block;
+			@extend %public;
+		}
+		.slider-item + .slider-item{
+			margin-left: .2rem;
+		}
+	}
+
+	
+
+}//opg End

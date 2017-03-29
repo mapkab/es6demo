@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	//版权信息
+	.icp-txt{
+		color: #999;
+		font-size: $fs24;
+		line-height: rem(35);
+		text-align: center;
+		margin-top: rem(3);
+	}
+}

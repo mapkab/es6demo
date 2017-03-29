@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	.m-skupop{
+		background-color: rgba(0,0,0,.4);
+		@include fixed-all;
+		.sku-main{
+			background-color: #fff;
+			@include link;
+			top: auto;
+		}
+		//主框架
+
+		.sku-close{
+			font-size: $fs20;
+			display: block;
+			padding: rem(20);
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		//关闭
+
+		.sku-info{
+			padding: rem(30);
+			position: relative;
+			@include flex-box();
+		}
+		h2{
+			color: nth($color,5);
+			font-size: rem(30);
+			line-height: 1.5;
+			@include ellipsis(mobile);
+		}
+		.price{
+			margin-top: rem(14);
+			strong{
+				font-size: rem(30);
+				margin-right: rem(30);
+			}
+		}
+		.img-box{
+			width: rem(200);
+			height: rem(200);
+			margin-right: rem(30);
+		}
+		.txt-box{
+			@include flex-box();
+			@include flex-col(1);
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+			width: 100%;
+		}
+		//商品信息
+
+		.sku-attr{
+			max-height: rem(530);
+			overflow: hidden;
+			overflow-y: auto;
+			padding-bottom: rem(2);
+			margin: rem(0 30 30 30);
+			position: relative;
+			-webkit-overflow-scrolling: touch;
+		}
+		.attr-info:first-child{
+			h4{
+				margin-top: 0;
+			}
+		}
+		h4{
+			font-size: rem(30);
+			font-weight: 400;
+			line-height: rem(46);
+			margin-top: rem(40);
+		}
+
+		.tags{
+			overflow: hidden;
+			padding-top: rem(10);
+			padding-bottom: rem(2);
+			margin-bottom: rem(-10);
+			li{
+				max-width: rem(320);
+				color: nth($color,5);
+				font-size: $fs26;
+				line-height: normal;
+				float: left;
+				overflow: hidden;
+				padding: rem(15 20);
+				margin: rem(20 30 10 0);
+				
+				@include ellipsis(mobile);
+				position: relative;
+				&:after{
+					@include border(all,1px,#666);
+					@include prefix(border-radius,rem(8),webkit);
+				}
+				&.active{
+					&:after{
+						border-color: #ed5b5d;
+					}
+					&:before{
+						width: .4rem;
+						height: .4rem;
+						display: block;
+						overflow: hidden;
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						content: '\e904';
+						font-family: iconwap !important;
+						font-size: 150%;
+						color: #ff5c5c;
+					}
+				}
+				&[disabled="disabled"]{
+					color: #d8d8d8;
+					&:after{
+						border-color: #d8d8d8;
+					}
+				}
+			}
+		}
+		//商品规则属性
+
+		.attr-num{
+			height: rem(62);
+			margin-top: rem(26);
+			a{
+				width: rem(78);
+				height: 100%;
+				float: left;
+				color: nth($color,5);
+				font-size: 130%;
+				line-height: inherit;
+				padding: .12rem .1rem;
+				text-align: center;
+				position: relative;
+				&.minus{
+					&:after{
+						@include border(all,1px,#999);
+						@include prefix(border-radius,rem(8 0 0 8),webkit);
+					}
+				}
+				&.plus{
+					&:after{
+						@include border(all,1px,#999);
+						@include prefix(border-radius,rem(0 8 8 0),webkit);
+					}
+				}
+			}
+			.ipt-box{
+				width: rem(120);
+				height: 100%;
+				float: left;
+				margin: 0 -1px;
+				position: relative;
+				&:after{
+					@include border(all,1px,#999);
+					border-left: none;
+					border-right: none;
+				}
+				&[disabled="disabled"]{
+
+				}
+			}
+			.ipt{
+				width: 100%;
+				height: 100%;
+				color: nth($color,5);
+				text-align: center;
+				outline: 0;
+				border:0;
+				border-radius: 0;
+				position: relative;
+				z-index: 2;
+			}
+			.num-tips{
+				float: left;
+				font-size: $fs28;
+				line-height: rem(62);
+				margin-left: rem(32);
+			}
+		}
+		//购买数量
+
+		.sku-btn{
+			@include flex-box();
+			a{
+				height: rem(88);
+				color: nth($color,1);
+				font-size: $fs32;
+				line-height: rem(88);
+				text-align: center;
+				background-color: #FF5C5C;
+				@include flex-col(1);
+				position: relative;
+				&.btn-red{
+					&:after{
+						@include border(left,1px,#fff);
+					}
+				}
+				&.btn-ok[disabled="disabled"]{
+					background-color: #ddd;
+				}
+				&.btn-red[disabled="disabled"]{
+					// background-color: #FF9F9F;
+					background-color: #D8D8D8;
+				}
+				&.btn-black[disabled="disabled"]{
+					background-color: #D8D8D8;
+				}
+			}
+		}
+		// 按钮
+	}
+	//sku End
+}

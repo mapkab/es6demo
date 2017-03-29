@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+@import '../reset/_mixin.scss';
+
+.opg{
+	//文章
+	.m-article{
+		color: #999;
+		font-size: $fs24;
+		line-height: rem(35);
+		text-align: center;
+		margin-top: rem(3);
+		.art-title{
+			text-align: center;
+			color: nth($color,5);
+			font-size: $fs40;
+			font-weight: 700;
+			line-height: rem(60);
+			p{
+				
+				text-align: left;
+				display: inline-block;
+				padding: rem(50 40 40);
+				word-wrap: break-word;
+				white-space: normal;
+				word-break: break-all;
+			}
+		}
+		// title
+
+		.art-meta{
+			margin: rem(0 30 30);
+		}
+
+		.m-userinfo{
+			overflow: hidden;
+			.img{
+				width: rem(40);
+				img{
+					width: 100%;
+				}
+			}
+		}
+
+
+	}
+}

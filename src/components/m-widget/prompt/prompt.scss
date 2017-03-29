@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import '../reset/_base.scss';
+
+.opg{
+	// 缺省页
+	.m-prompt{
+		text-align: center;
+		margin-top: rem(216);
+		.pro-img{
+			max-width: rem(245);
+			margin: 0 auto;
+			img{
+				width: 100%;
+			}
+		}
+		.pro-txt{
+			color: nth($color,3);
+			font-size: $fs26;
+			line-height: rem(40);
+			margin-top: rem(40);
+		}
+		.pro-btn{
+			margin-top: rem(20);
+			a.m-btn{
+				font-size: $fs28;
+				padding-left: rem(50);
+				padding-right: rem(50);
+			}
+		}
+	}
+}

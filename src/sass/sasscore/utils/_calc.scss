@@ -1,0 +1,29 @@
+//based on rem() API
+//Arhtor: Mapk Jia Shilong
+
+@import "_unit.scss";
+
+@function rem($values){
+	@if length($values) == 1{
+		@return px-to-rem(nth($values,1))
+	}
+	@else if length($values) == 2{
+		@return px-to-rem(nth($values,1)) 
+				px-to-rem(nth($values,2));
+	}
+	@else if length($values) == 3{
+		@return px-to-rem(nth($values,1)) 
+				px-to-rem(nth($values,2)) 
+				px-to-rem(nth($values,3));
+	}
+	@else if length($values) == 4{
+		@return px-to-rem(nth($values,1)) 
+				px-to-rem(nth($values,2)) 
+				px-to-rem(nth($values,3)) 
+				px-to-rem(nth($values,4));
+	}
+}
+
+@function px-to-rem($values,$browser-base-num:100){
+	@return (rm-unit($values)/rm-unit($browser-base-num))*1rem;
+}

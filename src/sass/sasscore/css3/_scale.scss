@@ -1,0 +1,35 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define scale
+// == @include scale((para1,para2),$prefixs);
+// ++ para1:number
+// ++ para2:number || string: x | y
+// ++ $prefixs:webkit(default) || moz || ms || o || none
+// -----------------------------------------------------
+
+@mixin scale($value:1,$prefixs:webkit){
+	@if length($value) == 1{
+		@include prefix(transform,scale($value),$prefixs);
+	}
+	@else if length($value) == 2{
+		@if nth($value,2) == x{
+			@include prefix(transform,scaleX(nth($value,1)));
+		}
+		@else if nth($value,2) == y{
+			@include prefix(transform,scaleY(nth($value,1)));
+		}
+		@else if nth($value,2) == z{
+			@include prefix(transform,scaleZ(nth($value,1)));
+		}
+		@else{
+			@include prefix(transform,scale($value),$prefixs);
+		}
+	}
+	// scale3d(x,y,z)
+	@if length($value) == 3{
+		@include prefix(transform,scale3d($value),$prefixs);
+	}
+}

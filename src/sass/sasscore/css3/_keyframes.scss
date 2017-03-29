@@ -1,0 +1,38 @@
+// based on prefix() API
+// Arhtor: Mapk Jia Shilong
+
+@import "../utils/_prefix.scss";
+
+// ## Define keyframes
+// ------------------------------------------------------
+
+@mixin keyframes($animation-name,$prefixs:webkit){
+	@each $prefix in $prefixs {
+		@if $prefix == webkit {
+			@-webkit-keyframes #{$animation-name}{
+				@content;
+			}
+		}
+		@if $prefix == moz {
+			@-moz-keyframes #{$animation-name}{
+				@content;
+			}
+		}
+		@if $prefix == ms {
+			@-ms-keyframes #{$animation-name}{
+				@content;
+			}
+		}
+		@if $prefix == o {
+			@-o-keyframes #{$animation-name}{
+				@content;
+			}
+		}
+		@if $prefix == none {
+			
+		}
+	}
+	@keyframes #{$animation-name}{
+		@content;
+	}
+}

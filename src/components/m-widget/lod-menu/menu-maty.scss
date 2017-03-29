@@ -1,0 +1,372 @@
+@charset "UTF-8";
+.opg{
+	.menu-list{
+		color: #666;
+		font-size: .3rem;
+		border-bottom: 1px solid #f2f2f2;
+		// margin-bottom: -1px;
+		background: #fff;
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+		display: -ms-flexbox;
+		// display: flex-box;
+		display: flexbox;
+		display: -webkit-flex;
+		display: flex;
+		text-align: center;
+		position: relative;
+		li{
+		    height: rem(90);	//解决线重合问题
+			padding: .3rem 0;
+			position: relative;
+			-webkit-box-flex: 1;
+			box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			span{
+				position: relative;
+				left: .15rem;
+				&:before,
+				&:after{
+					width: 0;
+					height: 0;
+					content: "";
+					overflow: hidden;
+					border-style: solid;
+					border-color: #666 transparent;
+					position: absolute;
+				}
+				&:before{
+					top:0.06rem;
+					border-width:0 .08rem .08rem .08rem;
+				}
+				&:after{
+					top:.17rem;
+					border-width: .08rem .08rem 0  .08rem;
+				}
+				&.up:before{
+					border-color: #fa5c5c transparent;
+				}
+				&.down:after{
+					border-color: #fa5c5c transparent;
+				}
+			}
+		}
+		.active{
+			color: #FF5C5C;
+			em{
+				color: #FF5C5C;
+			}
+			.num{
+				width: 60%;
+				height: .2rem;
+				margin-left: -30%;
+				border-bottom: 1px solid #ED5B5D;
+				position: absolute;
+				bottom:0;
+				left: 50%;
+			}
+		}
+	}
+	// 公用
+
+	.menu-list-shoptop{
+		.item{
+			height: rem(160);
+		}
+		.link{
+			height: rem(160);
+		}
+	}
+	.menu-list.menu-list-shoptop.menu-fixed{
+		.item{
+			height: auto;
+		}
+		.link{
+			height: auto;
+		}
+	}
+	// 店铺
+
+	.menu-list-foot{
+		&:after{
+			display: none;
+		}
+		.link{
+			color: nth($color,5);
+		}
+		.item + .item{
+			&:after{
+				@include border(left,1px,#DDD);
+				top: rem(26);
+				bottom: rem(26);
+			}
+		}
+		.active{
+			a.link:after{
+				display: none;
+			}
+		}
+	}
+	// 用户中心-页底
+
+	.menu-list-order{
+		.item{
+			height: rem(160);
+		}
+		.link{
+			height: rem(160);
+			padding-top: rem(40);
+			padding-bottom: rem(40);
+		}
+	}
+	// 用户中心-订单
+
+
+	.menu-list-shopbtn{
+		border-top: 1px solid #ddd;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 30010;
+		// z-index: 40000;
+		font-size: .32rem;
+		.item{
+			padding: 0;
+			a{
+				width: 100%;
+				display: inline-block;
+				padding: .3rem 0;
+			}
+			.txt{
+				margin-left: .1rem;
+			}
+		}
+		.item:after{
+			width: 0;
+			content: "";
+			margin-right: -1px;
+			overflow: hidden;
+			border-left: 1px solid #ddd;
+			position: absolute;
+			right:0;
+			top: .28rem;
+			bottom: .3rem;
+		}
+	}
+
+	.menu-list-shopmin{
+		font-size: .24rem;
+		&.menu-fixed{
+			top: .72rem;
+		}
+	}
+
+	.del-menu{
+		height: .88rem;
+		line-height: .88rem;
+		overflow: hidden;
+		padding: 0 .2rem 0 .3rem;
+		border-top: 1px solid #ddd;
+		background-color: #fff;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 40000;
+		.check-all-btn{
+			float: left;
+			em{
+				font-size: .3rem;
+				margin-right: .2rem;
+			}
+			.iconn-38{
+				color: #999;
+			}
+			.iconn-39{
+				color: #FF5C5C;
+			}
+		}
+		.m-btn{
+			float: right;
+			margin-top: .09rem;
+		}
+	}
+
+	// 
+	.m-navmore {
+	    height: 0;
+	    overflow: hidden;
+	    -webkit-transition: all .1s;
+	    transition: all .1s;
+	    background-color: #fff;
+	    box-shadow: 0 -1px 0 #e4e4e4 inset;
+	    ul {
+		    height: 1.1rem;
+		    display: block;
+		    display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: flex;
+		}
+		li {
+		    text-align: center;
+		    -webkit-box-flex: 1;
+		    -ms-flex: 1;
+		    flex: 1;
+		    em {
+			    color: #666;
+			    font-size: .41rem;
+			}
+		}
+		a {
+		    display: block;
+		    padding-top: .18rem;
+		}
+		p {
+		    color: #333;
+		    font-size: .24rem;
+		    line-height: .34rem;
+		    margin-top: .08rem;
+		}
+	}
+    .xin-share-cont{
+	    position: fixed;
+	    background-color: #FFF;
+	    left: 0;
+	    bottom: -100%;
+	    width: 100%;
+	    font-size: .28rem;
+	    padding-top: .42rem;
+	    a{
+	        display: block;
+		    text-align: center;
+		    color: #333
+	    }
+		.xin-share-list{
+		    overflow: hidden;
+		    li {
+			    float: left;
+			    width: 20%;
+			}
+		}
+		.xin-share-item{
+			img {
+			    width: .98rem;
+			    height: .98rem;
+			    margin: 0 auto;
+			}
+			.xin-share-txt {
+			    padding: .3rem 0 .4rem;
+			}
+		}
+		.xin-share-cancel{
+		    height: 1.02rem;
+		    line-height: 1.02rem;
+		    border-top: 1px solid #E4E4E4;
+		}
+	}
+
+	.menu-list-btns{
+		.tab-nav{
+			position: absolute;
+			bottom: 1.13rem;
+			left: -.1rem;
+			width: 3.02rem;
+			border: 1px solid #D7D6D6; //maty
+			// border-left: 1px solid #D7D6D6;
+			border-radius: .1rem;
+			background: #fff;
+			-webkit-box-shadow: 0 0 .06rem #D7D6D6;
+			box-shadow: 0 0 .06rem #D7D6D6;
+			// &:after{
+			// 	content: "";
+			// 	width: 99%;
+			// 	display: none; //maty
+			// 	height: .01rem;
+			// 	background-color: #D7D6D6;
+			// 	position: absolute;
+			// 	bottom: 0;
+			// 	left: 0.5%;
+			// 	z-index: 9;
+			// }
+			.triangle{
+				display: block;
+				width: .26rem;
+				height: .14rem;
+				overflow: hidden;
+				position: absolute;
+				left: .56rem;
+				bottom: -.13rem;
+				z-index: 10;
+				&:after{
+					z-index: 9;
+					width: .26rem;
+					height: .26rem;
+					content: "";
+					overflow: hidden;
+					display: block;
+					margin-top: -.18rem;
+					background-color: #fff;
+					-webkit-box-shadow: 0 0 .1rem #D7D6D6;
+					box-shadow: 0 0 .1rem #D7D6D6;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+			ul{
+				width: 3.02rem;
+				overflow: hidden;
+				margin-bottom: -1px;
+				border-radius: .1rem;
+			}
+			li{
+				float: left;
+				width: 3.02rem;
+				color: #666;
+				font-size: .28rem;
+				text-align: center;
+				padding: 0;
+				border-bottom: 1px solid #D8D8D8;
+				// border-right: 1px solid #D8D8D8; //maty
+				a{
+					max-height: .6rem;
+					padding: .16rem .26rem;
+				    line-height: 0.28rem;
+				    overflow: hidden;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+				}
+			}
+		}
+		.nav-big{
+			width: 6.05rem;
+			left: -1.68rem;
+			ul{
+				width: 6.05rem;
+			}
+			.triangle{
+				left: 2.12rem;
+			}
+			&:after{
+				content: "";
+				width: 1px;
+				display: block;
+				background-color: #D8D8D8;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+			}
+		}
+	}
+	.menu-fixed{
+		position: fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    z-index: 99;
+	}
+}
