@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div.wrap
+    div.container
+      h1= title
+      p Welcome to #{title}
+      p #{login}
+      p #{msg}
+      ul(class="nav nav-tabs", role="tablist", id="myTab")
+        li(role="presentation", class="active")
+          a(href="#home", role="tab", data-toggle="tab") Home
+        li(role="presentation")
+          a(href="#profile", role="tab", data-toggle="tab") profile
+      div.tab-content#myTabContent
+        div(role="tabpanel", class="tab-pane fade active in", id="home")
+          div(style="height:80px;width:300px")
+            span asdfasdfasdf
+        div(role="tabpanel", class="tab-pane fade", id="profile")
+          span asdfasdfasdfasdfasdfsadf
+  script(src='/javascripts/jquery-1.12.1.min.js')
+  script(src='/javascripts/bootstrap.min.js')
+  script().
+    $(function () {
+      $('#myTab a:last').tab('show')
+    })

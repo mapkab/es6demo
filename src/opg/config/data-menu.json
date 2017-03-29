@@ -1,0 +1,95 @@
+{
+  "menu":[
+    {
+      "id":1,
+      "default": true,
+      "name": "编译",
+      "url": "#",
+      "target":"compileMode",
+      "child":[
+        {
+          "id":11,
+          "default": false,
+          "name": "sass编译",
+          "url": "#",
+          "target":"",
+          "child":[]
+        },
+        {
+          "id":12,
+          "default": false,
+          "name": "jade编译",
+          "url": "#",
+          "target":"",
+          "child":[]
+        }
+      ]
+    },
+    {
+      "id":2,
+      "default": false,
+      "name": "推送更新",
+      "url": "#",
+      "target":"pushUpdate",
+      "child":[]
+    }
+  ],
+  "bizType":{
+    "app":{
+      "task":"",
+      "path":"src",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":""
+    },
+    "h5":{
+      "task":"",
+      "path":"src",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":""},
+    "op/app":{
+      "task":"",
+      "path":"src",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":""},
+    "op/h5":{"path":"src"},
+    "pc":{
+      "task":"",
+      "path":"src",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":""},
+    "pc-widget":{
+      "task":"jadeImg",
+      "path":"assets",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":"pc"},
+    "m-widget":{
+      "task":"jadeImg",
+      "path":"assets",
+      "gulpSassSrc":"",
+      "gulpSassDest":"",
+      "gulpJadeSrc":"",
+      "gulpJadeDest":"",
+      "gulpImgDest":"",
+      "gulpImgSrc":"pc"}
+  }
+}

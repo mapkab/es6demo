@@ -1,0 +1,14 @@
+div.btn-group.mb20.mr20#initedBtn
+  button(type="button", class="btn btn-success dropdown-toggle", data-toggle="dropdown") 已经构建的分支
+    span.caret
+  ul(class="dropdown-menu", role="menu")
+    -var projects;
+    -if(compileInfo && compileInfo[username]) { projects = compileInfo[username]["projects"] }
+    -var items;
+    -if(projects){ items = Object.keys(projects) }
+    -for(var key in items){
+    - if(projects[items[key]].dist){
+    li
+      a(href="#",data-bizType="" + projects[items[key]].dist.bizType, data-distUrl="" + projects[items[key]].dist.url,data-distBranch="" + projects[items[key]].dist.branch,data-sourceUrl="" + projects[items[key]].source.url, data-sourceBranch="" + projects[items[key]].source.branch) #{items[key]}
+    - }
+    -}

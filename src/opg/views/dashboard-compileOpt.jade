@@ -1,0 +1,34 @@
+div.urlInput.mb40
+  label(for="sourceGitUrl") UI分支路径（源路径）
+  br
+  //textarea#sourceGitUrl(name="sourceGitUrl",placeholder="请输入UI分支的git路径",class="form-control",rows="3") #{defaultGit}
+  div.input-group
+    div.input-group-btn
+      button(type="button", class="btn btn-default dropdown-toggle", data-toggle="dropdown") 选择默认值
+        span.caret
+      ul.dropdown-menu(role="menu", id="gitUrlSrc")
+        li
+          a(href="#") #{defaultGit}
+    input#sourceGitUrl.form-control(type="text")
+  div.branch
+    label(for="sourceBranch") 分支：
+    //input.form-control.branch#sourceBranch(name="sourceBranch",placeholder="请输入分支")
+    div.input-group
+      div.input-group-btn
+        button(type="button", class="btn btn-default dropdown-toggle", data-toggle="dropdown") 请选择分支
+          span.caret
+        ul.dropdown-menu(role="menu", id="branchesSrc")
+      input#sourceBranch.form-control(type="text")
+  br
+  label(for="distGitUrl") 业务分支路径（推送路径）
+  br
+  textarea#distGitUrl(name="distGitUrl",placeholder="请输入业务分支的git路径",class="form-control",rows="3")
+  div.branch
+    label(for="distBranch") 分支：
+    input.form-control#distBranch.branch(name="distBranch",placeholder="请输入分支")
+div.commitBtn
+  button#init.mr20(data-formAction="compileAndPush/init",class="ladda-button btn btn-info",data-style="zoom-out")
+    span.ladda-label 初始化项目
+  button#push(data-formAction="compileAndPush/push",class="ladda-button btn btn-primary",data-style="zoom-out")
+    span.ladda-label 编译并推送
+  span.tip.ml20#resultTip
